@@ -1,0 +1,13 @@
+# 个人背词进度数据库（绝不上传）
+*.db
+*.db-shm
+*.db-wal
+
+# 本地抓取与洗牌脚本
+*.sh
+
+# Python 缓存与系统垃圾文件
+__pycache__/
+*.pyc
+.DS_Store
+.progress.jsonl

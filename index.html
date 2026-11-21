@@ -1,0 +1,2308 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="antialiased">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>考研英语红宝书 · 词汇精研</title>
+
+  <!-- Fonts: Newsreader for Editorial English Headwords & Quotes, Noto Serif SC for Crisp Chinese -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', '"Times New Roman"', 'serif'],
+            cnserif: ['"Noto Serif SC"', 'Georgia', 'serif'],
+          },
+          colors: {
+            paper: {
+              bg: '#FAF9F6',
+              card: '#FFFFFF',
+              border: '#E7E2D8',
+              subtle: '#F3EFE6',
+            },
+            crimson: {
+              50: '#FEF2F2',
+              100: '#FEE2E2',
+              200: '#FECACA',
+              400: '#F87171',
+              500: '#EF4444',
+              600: '#DC2626',
+              700: '#B91C1C',
+              800: '#991B1B',
+              900: '#7F1D1D',
+            },
+            ink: {
+              primary: '#1C1917',
+              muted: '#57534E',
+            }
+          },
+          boxShadow: {
+            'card': '0 1px 2px rgba(28, 25, 23, 0.04), 0 4px 12px rgba(28, 25, 23, 0.03)',
+            'card-hover': '0 6px 18px rgba(28, 25, 23, 0.07), 0 1px 3px rgba(28, 25, 23, 0.04)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom Subtle Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(120, 113, 108, 0.28);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(120, 113, 108, 0.48);
+    }
+
+    /* Frosted-Glass Self-Test Mask Pill */
+    .mask-active {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 0.5rem;
+    }
+    .mask-active .mask-content {
+      filter: blur(7px);
+      opacity: 0.18;
+      transition: filter 0.18s ease, opacity 0.18s ease;
+    }
+    .mask-active::after {
+      content: attr(data-mask-label);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #991B1B;
+      background: linear-gradient(90deg, rgba(185, 28, 28, 0.09), rgba(185, 28, 28, 0.03));
+      backdrop-filter: blur(3px);
+      border: 1px dashed rgba(185, 28, 28, 0.34);
+      border-radius: 0.5rem;
+      transition: opacity 0.18s ease;
+      pointer-events: none;
+    }
+    .dark .mask-active::after {
+      color: #FCA5A5;
+      background: linear-gradient(90deg, rgba(248, 113, 113, 0.16), rgba(248, 113, 113, 0.05));
+      border-color: rgba(248, 113, 113, 0.36);
+    }
+    .mask-active:hover .mask-content,
+    .mask-active.revealed .mask-content {
+      filter: blur(0);
+      opacity: 1;
+    }
+    .mask-active:hover::after,
+    .mask-active.revealed::after {
+      opacity: 0;
+    }
+
+    /* 3D Flashcard Flip */
+    .perspective-1200 {
+      perspective: 1200px;
+    }
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+    .flashcard-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+    .flashcard-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .flashcard-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Highlight Target Word & Inflections inside Exam Examples */
+    .word-hl {
+      color: #B91C1C;
+      font-weight: 700;
+      background-color: rgba(185, 28, 28, 0.09);
+      padding: 0.04rem 0.26rem;
+      border-radius: 0.25rem;
+      border-bottom: 1.5px solid rgba(185, 28, 28, 0.38);
+    }
+    .dark .word-hl {
+      color: #FCA5A5;
+      background-color: rgba(248, 113, 113, 0.18);
+      border-bottom-color: rgba(248, 113, 113, 0.48);
+    }
+
+    /* Audio Playing Animation */
+    @keyframes soundPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.14); }
+    }
+    .speaking-pulse {
+      animation: soundPulse 0.65s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-paper-bg text-ink-primary dark:bg-slate-900 dark:text-slate-100 font-sans min-h-screen transition-colors duration-200 selection:bg-crimson-100 selection:text-crimson-900 dark:selection:bg-crimson-900/50 dark:selection:text-red-100">
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-stone-950/45 backdrop-blur-[2px] z-40 hidden lg:hidden transition-opacity"></div>
+
+  <!-- Main Responsive Layout -->
+  <div class="flex min-h-screen max-w-[1600px] mx-auto">
+
+    <!-- ==================== LEFT SIDEBAR (280px) ==================== -->
+    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 z-50 h-screen w-[280px] shrink-0 bg-paper-card dark:bg-slate-800 border-r border-paper-border dark:border-slate-700 flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-out">
+
+      <!-- Editorial Paper-Book Brand Header -->
+      <div class="px-5 pt-5 pb-4 border-b border-paper-border dark:border-slate-700 space-y-3.5">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-crimson-700 to-crimson-900 text-white flex items-center justify-center shadow-sm font-cnserif font-bold text-lg">
+              红
+            </div>
+            <div>
+              <h1 class="text-[16px] font-cnserif font-bold tracking-tight text-ink-primary dark:text-white leading-tight">考研英语红宝书</h1>
+              <p id="dataset-subtitle" class="text-[11px] font-medium text-ink-muted dark:text-slate-400 mt-0.5">正在连接词库...</p>
+            </div>
+          </div>
+          <!-- Mobile Close Drawer Button -->
+          <button id="btn-close-sidebar" class="lg:hidden p-2 rounded-lg text-ink-muted hover:bg-paper-subtle dark:text-slate-400 dark:hover:bg-slate-700" aria-label="关闭目录">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Global Mastery Progress -->
+        <div class="p-3 rounded-xl bg-paper-subtle/75 dark:bg-slate-900/60 border border-paper-border dark:border-slate-700">
+          <div class="flex items-center justify-between text-xs mb-1.5">
+            <span class="font-medium text-ink-muted dark:text-slate-300">总掌握进度</span>
+            <span id="global-progress-text" class="font-semibold text-crimson-700 dark:text-crimson-400 tabular-nums">0 / 0 (0%)</span>
+          </div>
+          <div class="w-full h-2 rounded-full bg-stone-200/90 dark:bg-slate-700 overflow-hidden">
+            <div id="global-progress-bar" class="h-full rounded-full bg-gradient-to-r from-crimson-700 to-crimson-600 dark:from-crimson-500 dark:to-crimson-400 transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Smart Virtual Views -->
+      <div class="px-3 pt-3 pb-2 space-y-1">
+        <button data-nav-view="NOTEBOOK" class="nav-item w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-medium transition-colors text-ink-primary dark:text-slate-200 hover:bg-paper-subtle dark:hover:bg-slate-700/70">
+          <span class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>全部生词本</span>
+          </span>
+          <span id="badge-notebook-count" class="text-xs px-2 py-0.5 rounded-full bg-amber-100/90 text-amber-800 dark:bg-amber-500/20 dark:text-amber-300 font-semibold tabular-nums">0</span>
+        </button>
+
+        <button data-nav-view="UNMASTERED" class="nav-item w-full flex items-center justify-between px-3 py-2 rounded-xl text-sm font-medium transition-colors text-ink-primary dark:text-slate-200 hover:bg-paper-subtle dark:hover:bg-slate-700/70">
+          <span class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-crimson-700 dark:text-crimson-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            <span>未掌握词库</span>
+          </span>
+          <span id="badge-unmastered-count" class="text-xs px-2 py-0.5 rounded-full bg-paper-subtle text-ink-muted dark:bg-slate-700 dark:text-slate-300 font-semibold tabular-nums">0</span>
+        </button>
+      </div>
+
+      <div class="px-5 py-1.5">
+        <div class="border-t border-paper-border dark:border-slate-700"></div>
+      </div>
+
+      <!-- Auto-Grouped Collapsible Unit Navigation -->
+      <nav id="unit-nav-container" class="flex-1 overflow-y-auto px-3 pb-4 space-y-2">
+        <!-- Dynamically rendered from ./api/meta -->
+      </nav>
+
+      <!-- Sidebar Footer: Cloud Sync Status, Dark Mode, Export/Import -->
+      <div class="p-3.5 border-t border-paper-border dark:border-slate-700 bg-paper-subtle/60 dark:bg-slate-900/50 space-y-2">
+        <div class="grid grid-cols-2 gap-2">
+          <button id="btn-export-progress" class="flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-xl text-xs font-medium bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 text-ink-muted dark:text-slate-300 hover:border-crimson-700/50 hover:text-crimson-700 dark:hover:text-crimson-400 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>导出进度</span>
+          </button>
+          <label class="flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-xl text-xs font-medium bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 text-ink-muted dark:text-slate-300 hover:border-crimson-700/50 hover:text-crimson-700 dark:hover:text-crimson-400 cursor-pointer transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+            <span>导入进度</span>
+            <input id="input-progress-upload" type="file" accept=".json,application/json" class="hidden" />
+          </label>
+        </div>
+
+        <button id="btn-theme-toggle" class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-medium bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 text-ink-primary dark:text-slate-200 hover:border-stone-400 dark:hover:border-slate-500 transition-colors">
+          <svg class="w-3.5 h-3.5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-3.5 h-3.5 block dark:hidden text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <span id="theme-label">切换深色模式</span>
+        </button>
+
+        <!-- Clean Cloud Sync Status Pill -->
+        <div class="flex items-center justify-center pt-0.5">
+          <div id="sync-status-pill" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-paper-card/90 dark:bg-slate-800 border border-paper-border dark:border-slate-700 text-ink-muted dark:text-slate-300">
+            <span id="sync-status-dot" class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <span id="sync-status-text">同步中...</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN STUDY AREA ==================== -->
+    <main class="flex-1 min-w-0 flex flex-col">
+
+      <!-- Sticky Top Study Toolbar -->
+      <header class="sticky top-0 z-30 bg-paper-bg/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-paper-border dark:border-slate-700">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 space-y-2.5">
+
+          <!-- Row 1: Mobile Menu, Unit Title + Prev/Next Arrows, View Mode Switcher -->
+          <div class="flex flex-wrap items-center justify-between gap-2.5">
+            <div class="flex items-center gap-2 min-w-0">
+              <button id="btn-open-sidebar" class="lg:hidden p-2 -ml-1 rounded-xl bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 text-ink-primary dark:text-slate-200" aria-label="打开侧边栏">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              </button>
+
+              <div class="flex items-center gap-2 min-w-0">
+                <h2 id="current-view-title" class="text-lg sm:text-xl font-cnserif font-bold tracking-tight text-ink-primary dark:text-white truncate">加载中...</h2>
+                <span id="current-view-stats" class="shrink-0 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-crimson-50 text-crimson-700 dark:bg-crimson-900/40 dark:text-crimson-400 tabular-nums">0 词</span>
+              </div>
+
+              <!-- Quick Prev / Next Unit Arrows -->
+              <div id="unit-quick-arrows" class="hidden sm:flex items-center gap-1 ml-1">
+                <button id="btn-prev-unit" title="上一单元" class="p-1.5 rounded-lg border border-paper-border dark:border-slate-700 bg-paper-card dark:bg-slate-800 text-ink-muted dark:text-slate-300 hover:text-crimson-700 dark:hover:text-crimson-400 hover:border-crimson-700/40 disabled:opacity-35 disabled:pointer-events-none transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="btn-next-unit" title="下一单元" class="p-1.5 rounded-lg border border-paper-border dark:border-slate-700 bg-paper-card dark:bg-slate-800 text-ink-muted dark:text-slate-300 hover:text-crimson-700 dark:hover:text-crimson-400 hover:border-crimson-700/40 disabled:opacity-35 disabled:pointer-events-none transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- 3 Study View Mode Buttons -->
+            <div class="flex items-center gap-1 bg-paper-subtle dark:bg-slate-800 p-1 rounded-xl border border-paper-border dark:border-slate-700">
+              <button id="mode-card" class="view-mode-btn px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm0 10a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z"/></svg>
+                <span>卡片视图</span>
+              </button>
+              <button id="mode-list" class="view-mode-btn px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                <span>速刷列表</span>
+              </button>
+              <button id="btn-open-flashcard" class="px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold bg-crimson-700 hover:bg-crimson-800 text-white shadow-sm transition-all flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                <span>闪卡模式</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Row 2: Global Search + Self-Test Masks + Voice Accent -->
+          <div class="flex flex-col md:flex-row items-stretch md:items-center gap-2">
+            <!-- Global Search -->
+            <div class="relative flex-1 flex items-center bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 rounded-xl focus-within:ring-2 focus-within:ring-crimson-700/20 focus-within:border-crimson-700 dark:focus-within:border-crimson-400 transition-all">
+              <svg class="w-4 h-4 text-ink-muted dark:text-slate-400 ml-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <input id="search-input" type="text" placeholder="全局搜索英文单词或中文释义..." class="w-full bg-transparent px-2.5 py-2 text-sm text-ink-primary dark:text-slate-100 placeholder-stone-400 dark:placeholder-slate-500 focus:outline-none" />
+              <svg id="search-spinner" class="hidden w-4 h-4 mr-2 animate-spin text-crimson-700 dark:text-crimson-400 shrink-0" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+              </svg>
+              <button id="btn-clear-search" class="hidden p-1.5 mr-1 text-stone-400 hover:text-ink-primary dark:hover:text-slate-200 rounded-lg" aria-label="清除搜索">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              </button>
+            </div>
+
+            <!-- Self-Test Mask & Voice Accent Toggles -->
+            <div class="flex flex-wrap items-center gap-1.5">
+              <button id="btn-mask-meaning" class="px-3 py-2 rounded-xl text-xs font-semibold border border-paper-border dark:border-slate-700 bg-paper-card dark:bg-slate-800 text-ink-primary dark:text-slate-200 hover:border-crimson-700/50 transition-all flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/></svg>
+                <span>遮挡释义</span>
+              </button>
+
+              <button id="btn-mask-word" class="px-3 py-2 rounded-xl text-xs font-semibold border border-paper-border dark:border-slate-700 bg-paper-card dark:bg-slate-800 text-ink-primary dark:text-slate-200 hover:border-crimson-700/50 transition-all flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                <span>遮挡单词</span>
+              </button>
+
+              <button id="btn-accent-toggle" title="切换发音口音" class="px-3 py-2 rounded-xl text-xs font-semibold border border-paper-border dark:border-slate-700 bg-paper-card dark:bg-slate-800 text-ink-muted dark:text-slate-300 hover:border-crimson-700/50 hover:text-crimson-700 dark:hover:text-crimson-400 transition-all flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                <span id="accent-label">美音</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Row 3: In-View Filter Pills + Expand All Examples -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-0.5">
+            <div class="flex flex-wrap items-center gap-1.5" id="filter-pills">
+              <button data-filter="all" class="filter-pill px-3 py-1 rounded-full text-xs font-semibold transition-all">全部</button>
+              <button data-filter="unmastered" class="filter-pill px-3 py-1 rounded-full text-xs font-semibold transition-all">未掌握</button>
+              <button data-filter="notebook" class="filter-pill px-3 py-1 rounded-full text-xs font-semibold transition-all">生词本</button>
+            </div>
+
+            <button id="btn-toggle-all-examples" class="text-xs font-medium text-ink-muted dark:text-slate-400 hover:text-crimson-700 dark:hover:text-crimson-400 flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-paper-subtle dark:hover:bg-slate-800 transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              <span id="toggle-all-examples-label">展开本页例句</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Word Content Container -->
+      <section class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6">
+        <!-- Offline Preview Notice (shown only when ./api/meta is unreachable) -->
+        <div id="offline-banner" class="hidden mb-5 px-4 py-3 rounded-xl bg-amber-50/90 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/60 flex items-center justify-between gap-3 text-xs text-amber-900 dark:text-amber-200">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 shrink-0 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>当前未检测到后端服务，已自动切换为<strong>离线演示模式</strong>（内置 15 词真题样本，进度暂存浏览器本地）。部署至你的服务器后将自动启用 SQLite 云同步与按单元加载。</span>
+          </div>
+        </div>
+
+        <!-- Word Cards / Fast-Scan List Root -->
+        <div id="word-list-root"></div>
+
+        <!-- Load More Chunk Button (for large Unmastered view) -->
+        <div id="load-more-container" class="hidden mt-6 text-center">
+          <button id="btn-load-more" class="px-6 py-2.5 rounded-xl text-sm font-semibold bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 text-ink-primary dark:text-slate-200 hover:border-crimson-700 hover:text-crimson-700 dark:hover:text-crimson-400 shadow-card transition-all">
+            加载更多未掌握单词
+          </button>
+        </div>
+
+        <!-- Bottom Unit Switcher Footer -->
+        <div id="unit-footer-nav" class="hidden mt-8 pt-6 border-t border-paper-border dark:border-slate-700 flex items-center justify-between gap-3">
+          <button id="btn-footer-prev" class="px-4 py-2.5 rounded-xl text-sm font-medium bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 text-ink-primary dark:text-slate-200 hover:border-crimson-700/50 hover:text-crimson-700 dark:hover:text-crimson-400 disabled:opacity-40 disabled:pointer-events-none flex items-center gap-2 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            <span id="footer-prev-label">上一单元</span>
+          </button>
+          <button id="btn-footer-next" class="px-4 py-2.5 rounded-xl text-sm font-medium bg-crimson-700 hover:bg-crimson-800 text-white disabled:opacity-40 disabled:pointer-events-none flex items-center gap-2 shadow-sm transition-colors">
+            <span id="footer-next-label">下一单元</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ==================== FULL-SCREEN 3D FLASHCARD MODAL ==================== -->
+  <div id="flashcard-modal" class="fixed inset-0 z-50 hidden bg-stone-950/70 dark:bg-slate-950/85 backdrop-blur-md flex flex-col items-center justify-between p-4 sm:p-6">
+    <!-- Modal Header -->
+    <div class="w-full max-w-2xl flex items-center justify-between text-white">
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 rounded-lg bg-white/15 text-xs font-semibold tracking-wide">闪卡模式</span>
+        <span id="fc-counter" class="text-sm font-medium tabular-nums text-white/90">1 / 1</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="fc-shuffle" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-medium transition-colors flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          <span>乱序</span>
+        </button>
+        <button id="fc-close" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors" aria-label="退出闪卡">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 3D Flip Card Stage -->
+    <div id="fc-stage" class="w-full max-w-2xl flex-1 max-h-[540px] my-4 perspective-1200 cursor-pointer select-none">
+      <div id="fc-inner" class="flashcard-inner">
+        <!-- Front Face -->
+        <div class="flashcard-face bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-10 flex flex-col items-center justify-center text-center relative">
+          <div class="absolute top-5 left-6 flex items-center gap-2">
+            <span id="fc-unit-badge" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-paper-subtle dark:bg-slate-700 text-ink-muted dark:text-slate-300"></span>
+            <span id="fc-freq-badge" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-crimson-50 dark:bg-crimson-900/40 text-crimson-700 dark:text-crimson-400"></span>
+          </div>
+          <div id="fc-status-badges" class="absolute top-5 right-6 flex items-center gap-1.5"></div>
+
+          <h3 id="fc-word" class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-ink-primary dark:text-white break-words max-w-full"></h3>
+
+          <button id="fc-speak" class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-subtle dark:bg-slate-700 text-ink-primary dark:text-slate-200 hover:bg-crimson-50 hover:text-crimson-700 dark:hover:bg-crimson-900/40 dark:hover:text-crimson-400 text-sm font-medium transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+            <span>点击发音 (S)</span>
+          </button>
+
+          <p class="absolute bottom-6 text-xs text-stone-400 dark:text-slate-500">点击卡片或按 Space 查看释义与真题例句</p>
+        </div>
+
+        <!-- Back Face -->
+        <div class="flashcard-face flashcard-back bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 rounded-3xl shadow-2xl p-6 sm:p-8 flex flex-col overflow-y-auto">
+          <div class="flex items-center justify-between gap-3 pb-4 border-b border-paper-border dark:border-slate-700">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <h3 id="fc-back-word" class="font-serif text-2xl sm:text-3xl font-bold text-ink-primary dark:text-white truncate"></h3>
+              <button id="fc-back-speak" class="p-1.5 rounded-full bg-paper-subtle dark:bg-slate-700 text-ink-muted dark:text-slate-300 hover:text-crimson-700 dark:hover:text-crimson-400 transition-colors" aria-label="发音">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+              </button>
+            </div>
+            <span id="fc-back-freq" class="shrink-0 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-crimson-50 dark:bg-crimson-900/40 text-crimson-700 dark:text-crimson-400"></span>
+          </div>
+
+          <!-- Parsed POS Meaning -->
+          <div id="fc-meaning" class="py-4 text-[15px] leading-relaxed text-ink-primary dark:text-slate-100"></div>
+
+          <!-- Top 2 Exam Examples -->
+          <div class="mt-auto pt-3 border-t border-paper-border dark:border-slate-700">
+            <p class="text-xs font-semibold text-ink-muted dark:text-slate-400 mb-2.5">精选真题例句</p>
+            <div id="fc-examples" class="space-y-2.5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Bottom Controls & Shortcuts -->
+    <div class="w-full max-w-2xl space-y-3">
+      <div class="grid grid-cols-4 gap-2 sm:gap-3">
+        <button id="fc-prev" class="py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors flex items-center justify-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          <span>上一个</span>
+        </button>
+        <button id="fc-toggle-mastered" class="py-3 rounded-2xl bg-emerald-600/85 hover:bg-emerald-600 text-white text-sm font-semibold transition-colors flex items-center justify-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <span id="fc-mastered-text">已掌握</span>
+        </button>
+        <button id="fc-toggle-notebook" class="py-3 rounded-2xl bg-amber-500/85 hover:bg-amber-500 text-white text-sm font-semibold transition-colors flex items-center justify-center gap-1.5">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span id="fc-notebook-text">生词本</span>
+        </button>
+        <button id="fc-next" class="py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors flex items-center justify-center gap-1.5">
+          <span>下一个</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="hidden sm:flex items-center justify-center gap-4 text-[11px] text-white/65">
+        <span><kbd class="px-1.5 py-0.5 rounded bg-white/15 font-mono">Space</kbd> 翻转</span>
+        <span><kbd class="px-1.5 py-0.5 rounded bg-white/15 font-mono">← / →</kbd> 切换</span>
+        <span><kbd class="px-1.5 py-0.5 rounded bg-white/15 font-mono">1</kbd> 已掌握</span>
+        <span><kbd class="px-1.5 py-0.5 rounded bg-white/15 font-mono">2</kbd> 生词本</span>
+        <span><kbd class="px-1.5 py-0.5 rounded bg-white/15 font-mono">S</kbd> 发音</span>
+        <span><kbd class="px-1.5 py-0.5 rounded bg-white/15 font-mono">Esc</kbd> 退出</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-[60] flex flex-col gap-2 pointer-events-none"></div>
+
+  <script>
+    (() => {
+      'use strict';
+
+      /* =====================================================================
+       * 1. OFFLINE PREVIEW SAMPLE DATASET (15 Authentic Kaoyan Words)
+       *    Used ONLY when ./api/meta is unreachable (local static preview).
+       * ===================================================================== */
+      const SAMPLE_WORDS = [
+        {
+          page: '必考词Unit1', index: 1, word: 'poverty', count: 14,
+          meaning: 'n.贫穷，贫困；缺乏，贫乏',
+          examples: [
+            { y: 2024, t: '阅读', tag: '正文', src: '2024英一Text2', txt: 'Addressing rural poverty requires sustained investment in education and digital infrastructure.' },
+            { y: 2022, t: '阅读', tag: '正文', src: '2022英二Text1', txt: 'Millions of families were lifted out of extreme poverty over the past decade.' },
+            { y: 2019, t: '翻译', tag: '正文', src: '2019英一翻译', txt: 'The poverty of imagination often limits scientific breakthroughs more than the lack of funding.' }
+          ]
+        },
+        {
+          page: '必考词Unit1', index: 2, word: 'common', count: 38,
+          meaning: 'adj.共同的，共有的；常见的，普通的；粗俗的 n.公地，公共用地',
+          examples: [
+            { y: 2024, t: '阅读', tag: '正文', src: '2024英一Text1', txt: 'It is common for historians to revise earlier interpretations when new archives emerge.' },
+            { y: 2023, t: '完形', tag: '选项', src: '2023英一完形', txt: 'Despite their differences, the two communities share a common heritage and language.' },
+            { y: 2021, t: '阅读', tag: '题干', src: '2021英一Text3', txt: 'What do the two studies mentioned in Paragraph 2 have in common?' },
+            { y: 2020, t: '阅读', tag: '正文', src: '2020英二Text4', txt: 'Overgrazing on the town common eventually led to stricter ecological regulations.' },
+            { y: 2018, t: '阅读', tag: '选项', src: '2018英一Text2', txt: 'Automation is commonly viewed as a double-edged sword for the modern labor market.' },
+            { y: 2016, t: '阅读', tag: '正文', src: '2016英一Text1', txt: 'Common sense suggests that early intervention reduces long-term healthcare costs.' }
+          ]
+        },
+        {
+          page: '必考词Unit1', index: 3, word: 'outline', count: 11,
+          meaning: 'n.轮廓，外形；大纲，提纲 vt.概述，略述；描……的外形',
+          examples: [
+            { y: 2023, t: '阅读', tag: '正文', src: '2023英一Text4', txt: 'The committee outlined a five-year roadmap to curb carbon emissions across major industries.' },
+            { y: 2020, t: '阅读', tag: '题干', src: '2020英一Text2', txt: 'The opening paragraph mainly serves to outline the background of the copyright dispute.' }
+          ]
+        },
+        {
+          page: '必考词Unit1', index: 4, word: 'immigrant', count: 16,
+          meaning: 'n.移民，侨民 adj.移民的，移居的',
+          examples: [
+            { y: 2023, t: '阅读', tag: '正文', src: '2023英二Text3', txt: 'Skilled immigrants have contributed significantly to the growth of emerging tech hubs.' },
+            { y: 2019, t: '完形', tag: '正文', src: '2019英二完形', txt: 'Second-generation immigrant families often balance traditional values with local customs.' }
+          ]
+        },
+        {
+          page: '必考词Unit1', index: 5, word: 'implement', count: 19,
+          meaning: 'vt.实施，贯彻，执行 n.工具，器具',
+          examples: [
+            { y: 2024, t: '阅读', tag: '正文', src: '2024英二Text3', txt: 'Local authorities struggled to implement the newly passed privacy standards effectively.' },
+            { y: 2021, t: '阅读', tag: '选项', src: '2021英一Text4', txt: 'Strict monitoring is essential when implementing nationwide educational reforms.' }
+          ]
+        },
+        {
+          page: '必考词Unit2', index: 6, word: 'condition', count: 29,
+          meaning: 'n.状况，状态；条件，前提；疾病 vt.训练，使习惯于；制约',
+          examples: [
+            { y: 2024, t: '阅读', tag: '正文', src: '2024英一Text3', txt: 'Working conditions in automated warehouses have drawn scrutiny from labor advocates.' },
+            { y: 2022, t: '翻译', tag: '正文', src: '2022英一翻译', txt: 'Social norms often condition individuals to conform to collective expectations.' },
+            { y: 2019, t: '阅读', tag: '选项', src: '2019英一Text1', txt: 'Financial aid was granted on condition that the institution improved transparency.' }
+          ]
+        },
+        {
+          page: '必考词Unit2', index: 7, word: 'mental', count: 22,
+          meaning: 'adj.精神的，心理的；智力的，脑力的',
+          examples: [
+            { y: 2024, t: '阅读', tag: '正文', src: '2024英二Text2', txt: 'Regular outdoor exercise has been shown to alleviate anxiety and boost mental resilience.' },
+            { y: 2021, t: '完形', tag: '正文', src: '2021英二完形', txt: 'Chronic sleep deprivation impairs both mental agility and emotional regulation.' }
+          ]
+        },
+        {
+          page: '必考词Unit2', index: 8, word: 'shift', count: 27,
+          meaning: 'v.转移，转变；换挡；轮班 n.转变，变化；轮班；班次',
+          examples: [
+            { y: 2023, t: '阅读', tag: '正文', src: '2023英一Text2', txt: 'Consumer demand has shifted dramatically toward sustainable and repairable electronics.' },
+            { y: 2020, t: '阅读', tag: '题干', src: '2020英一Text4', txt: 'What accounts for the recent shift in corporate attitudes toward remote work?' }
+          ]
+        },
+        {
+          page: '必考词Unit2', index: 9, word: 'fund', count: 24,
+          meaning: 'n.资金，基金；专款；储备 vt.为……提供资金，资助',
+          examples: [
+            { y: 2023, t: '阅读', tag: '正文', src: '2023英一Text1', txt: 'Publicly funded museums face mounting pressure to diversify their revenue streams.' },
+            { y: 2020, t: '阅读', tag: '选项', src: '2020英二Text1', txt: 'A dedicated emergency fund helps small businesses survive sudden market downturns.' }
+          ]
+        },
+        {
+          page: '必考词Unit2', index: 10, word: 'quality', count: 31,
+          meaning: 'n.质量，品质；特性，素质 adj.优质的，高质量的',
+          examples: [
+            { y: 2024, t: '阅读', tag: '正文', src: '2024英一Text4', txt: 'Algorithmic curation should prioritize journalistic quality over sheer click volume.' },
+            { y: 2021, t: '翻译', tag: '正文', src: '2021英二翻译', txt: 'Curiosity and patience are the defining qualities of a dedicated researcher.' }
+          ]
+        },
+        {
+          page: '必考词Unit3', index: 11, word: 'practical', count: 18,
+          meaning: 'adj.实际的，实用的；切实可行的；注重实效的',
+          examples: [
+            { y: 2023, t: '阅读', tag: '正文', src: '2023英二Text2', txt: 'Vocational programs equip graduates with practical skills aligned with industry needs.' },
+            { y: 2019, t: '阅读', tag: '选项', src: '2019英一Text3', txt: 'While theoretically appealing, the proposal proved practically impossible to enforce.' }
+          ]
+        },
+        {
+          page: '必考词Unit3', index: 12, word: 'conflict', count: 21,
+          meaning: 'n.冲突，矛盾；争执，分歧 vi.冲突，抵触',
+          examples: [
+            { y: 2024, t: '阅读', tag: '正文', src: '2024英二Text1', txt: 'Urban renewal projects frequently spark conflicts between heritage preservation and housing supply.' },
+            { y: 2021, t: '阅读', tag: '题干', src: '2021英一Text2', txt: 'The author cites the lawsuit to illustrate a conflicting view on data ownership.' }
+          ]
+        },
+        {
+          page: '必考词Unit3', index: 13, word: 'vision', count: 15,
+          meaning: 'n.视力，视觉；远见卓识；想象，愿景',
+          examples: [
+            { y: 2022, t: '阅读', tag: '正文', src: '2022英一Text3', txt: 'Long-term ecological restoration demands political vision beyond a single election cycle.' },
+            { y: 2018, t: '完形', tag: '正文', src: '2018英一完形', txt: 'Early telescopes expanded human vision far beyond the limits of the naked eye.' }
+          ]
+        },
+        {
+          page: '必考词Unit3', index: 14, word: 'efficiency', count: 20,
+          meaning: 'n.效率，效能；功效',
+          examples: [
+            { y: 2024, t: '阅读', tag: '正文', src: '2024英一Text2', txt: 'Pursuing maximum efficiency at the expense of resilience can leave supply chains fragile.' },
+            { y: 2020, t: '阅读', tag: '选项', src: '2020英一Text3', txt: 'Smart grids significantly improve energy efficiency during peak demand hours.' }
+          ]
+        },
+        {
+          page: '必考词Unit3', index: 15, word: 'restore', count: 17,
+          meaning: 'vt.恢复，使复原；修复，整修；归还',
+          examples: [
+            { y: 2023, t: '阅读', tag: '正文', src: '2023英一Text3', txt: 'Wetland conservation efforts have gradually restored habitats for migratory birds.' },
+            { y: 2021, t: '阅读', tag: '选项', src: '2021英二Text4', txt: 'Transparent auditing is the first step toward restoring public trust in financial institutions.' }
+          ]
+        }
+      ];
+
+      /* =====================================================================
+       * 2. APPLICATION STATE & CACHE
+       * ===================================================================== */
+      const LOCAL_FALLBACK_KEY = 'redbook_offline_preview_v1';
+      const UNMASTERED_CHUNK_SIZE = 100;
+      const translationCache = new Map();   // 例句原文 -> 中文译文（前端内存缓存，避免重复请求）
+      const translationPending = new Map(); // 例句原文 -> Promise（去重并发，同一句只发一次请求）
+
+      const state = {
+        offlineMode: false,
+        meta: null,               // { version, total_words, total_units, units: [{ page, count, words }] }
+        unitOrder: [],            // Ordered list of unit names
+        unitCache: new Map(),     // unitName -> WordObj[]
+        prefetching: new Set(),   // unitNames currently being prefetched
+
+        // Synced User Progress & Settings
+        mastered: new Set(),
+        notebook: new Set(),
+        settings: {
+          darkMode: false,
+          lastUnit: null,
+          accent: 'en-US',        // 'en-US' | 'en-GB'
+        },
+
+        // Current Navigation & UI State
+        activeView: null,         // unitName | 'NOTEBOOK' | 'UNMASTERED'
+        searchQuery: '',
+        searchResults: null,      // { query, total, results } | null
+        currentWords: [],         // Words currently loaded for activeView
+        unmasteredAllKeys: [],    // All unmastered word strings when viewing UNMASTERED
+        unmasteredOffset: 0,      // Pagination cursor for UNMASTERED
+        isLoadingView: false,
+
+        // Study Controls
+        viewMode: 'card',         // 'card' | 'list'
+        filter: 'all',            // 'all' | 'unmastered' | 'notebook'
+        maskMeaning: false,
+        maskWord: false,
+        allExamplesExpanded: false,
+        collapsedGroups: new Set(),
+
+        // Card-level UI state
+        expandedDrawers: new Set(),   // word keys with open exam example drawer
+        drawerSourceFilter: new Map(),// word key -> '全部' | '正文' | '选项' | '题干'
+
+        // Flashcard Modal State
+        fcOpen: false,
+        fcList: [],
+        fcIndex: 0,
+        fcFlipped: false,
+
+        // Sync indicator counter
+        pendingSyncs: 0,
+      };
+
+      /* =====================================================================
+       * 3. DOM REFERENCES
+       * ===================================================================== */
+      const $ = (id) => document.getElementById(id);
+      const els = {
+        sidebar: $('sidebar'),
+        mobileBackdrop: $('mobile-backdrop'),
+        btnOpenSidebar: $('btn-open-sidebar'),
+        btnCloseSidebar: $('btn-close-sidebar'),
+        datasetSubtitle: $('dataset-subtitle'),
+        globalProgressText: $('global-progress-text'),
+        globalProgressBar: $('global-progress-bar'),
+        badgeNotebook: $('badge-notebook-count'),
+        badgeUnmastered: $('badge-unmastered-count'),
+        unitNavContainer: $('unit-nav-container'),
+        btnExportProgress: $('btn-export-progress'),
+        inputProgressUpload: $('input-progress-upload'),
+        btnThemeToggle: $('btn-theme-toggle'),
+        themeLabel: $('theme-label'),
+        syncStatusDot: $('sync-status-dot'),
+        syncStatusText: $('sync-status-text'),
+
+        currentViewTitle: $('current-view-title'),
+        currentViewStats: $('current-view-stats'),
+        unitQuickArrows: $('unit-quick-arrows'),
+        btnPrevUnit: $('btn-prev-unit'),
+        btnNextUnit: $('btn-next-unit'),
+        modeCard: $('mode-card'),
+        modeList: $('mode-list'),
+        btnOpenFlashcard: $('btn-open-flashcard'),
+
+        searchInput: $('search-input'),
+        searchSpinner: $('search-spinner'),
+        btnClearSearch: $('btn-clear-search'),
+        btnMaskMeaning: $('btn-mask-meaning'),
+        btnMaskWord: $('btn-mask-word'),
+        btnAccentToggle: $('btn-accent-toggle'),
+        accentLabel: $('accent-label'),
+        filterPills: $('filter-pills'),
+        btnToggleAllExamples: $('btn-toggle-all-examples'),
+        toggleAllExamplesLabel: $('toggle-all-examples-label'),
+
+        offlineBanner: $('offline-banner'),
+        wordListRoot: $('word-list-root'),
+        loadMoreContainer: $('load-more-container'),
+        btnLoadMore: $('btn-load-more'),
+        unitFooterNav: $('unit-footer-nav'),
+        btnFooterPrev: $('btn-footer-prev'),
+        btnFooterNext: $('btn-footer-next'),
+        footerPrevLabel: $('footer-prev-label'),
+        footerNextLabel: $('footer-next-label'),
+
+        fcModal: $('flashcard-modal'),
+        fcCounter: $('fc-counter'),
+        fcShuffle: $('fc-shuffle'),
+        fcClose: $('fc-close'),
+        fcStage: $('fc-stage'),
+        fcInner: $('fc-inner'),
+        fcUnitBadge: $('fc-unit-badge'),
+        fcFreqBadge: $('fc-freq-badge'),
+        fcStatusBadges: $('fc-status-badges'),
+        fcWord: $('fc-word'),
+        fcSpeak: $('fc-speak'),
+        fcBackWord: $('fc-back-word'),
+        fcBackSpeak: $('fc-back-speak'),
+        fcBackFreq: $('fc-back-freq'),
+        fcMeaning: $('fc-meaning'),
+        fcExamples: $('fc-examples'),
+        fcPrev: $('fc-prev'),
+        fcNext: $('fc-next'),
+        fcToggleMastered: $('fc-toggle-mastered'),
+        fcToggleNotebook: $('fc-toggle-notebook'),
+        fcMasteredText: $('fc-mastered-text'),
+        fcNotebookText: $('fc-notebook-text'),
+
+        toastContainer: $('toast-container'),
+      };
+
+      /* =====================================================================
+       * 4. UTILITY HELPERS
+       * ===================================================================== */
+      function escapeHtml(str) {
+        return String(str ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function escapeRegex(str) {
+        return String(str).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+
+      function naturalCompare(a, b) {
+        const re = /(\d+)|(\D+)/g;
+        const pa = String(a).match(re) || [];
+        const pb = String(b).match(re) || [];
+        const len = Math.max(pa.length, pb.length);
+        for (let i = 0; i < len; i++) {
+          if (pa[i] === undefined) return -1;
+          if (pb[i] === undefined) return 1;
+          const na = /^\d+$/.test(pa[i]) ? parseInt(pa[i], 10) : null;
+          const nb = /^\d+$/.test(pb[i]) ? parseInt(pb[i], 10) : null;
+          if (na !== null && nb !== null) {
+            if (na !== nb) return na - nb;
+          } else {
+            const cmp = pa[i].localeCompare(pb[i], 'zh-CN');
+            if (cmp !== 0) return cmp;
+          }
+        }
+        return 0;
+      }
+
+      function splitUnitPage(pageName) {
+        const match = String(pageName).match(/^(.*?)\s*(Unit\s*\d+.*)$/i);
+        if (match) {
+          const group = match[1].trim() || '词汇单元';
+          const rawUnit = match[2].trim().replace(/^unit\s*/i, 'Unit ');
+          return { group, label: rawUnit };
+        }
+        return { group: '词库分类', label: pageName };
+      }
+
+      function showToast(message, type = 'info') {
+        const toast = document.createElement('div');
+        const styles = {
+          info: 'bg-ink-primary dark:bg-slate-700 text-white border-stone-700',
+          success: 'bg-emerald-700 text-white border-emerald-600',
+          error: 'bg-crimson-700 text-white border-crimson-600',
+        };
+        toast.className = `pointer-events-auto px-4 py-2.5 rounded-xl text-xs font-medium shadow-lg border transition-all duration-300 translate-y-2 opacity-0 ${styles[type] || styles.info}`;
+        toast.textContent = message;
+        els.toastContainer.appendChild(toast);
+        requestAnimationFrame(() => {
+          toast.classList.remove('translate-y-2', 'opacity-0');
+        });
+        setTimeout(() => {
+          toast.classList.add('translate-y-2', 'opacity-0');
+          setTimeout(() => toast.remove(), 300);
+        }, 2400);
+      }
+
+      function updateSyncIndicator(mode) {
+        // mode: 'syncing' | 'synced' | 'offline' | 'error'
+        const dot = els.syncStatusDot;
+        const txt = els.syncStatusText;
+        dot.className = 'w-2 h-2 rounded-full';
+        if (mode === 'offline') {
+          dot.classList.add('bg-amber-500');
+          txt.textContent = '离线演示模式';
+        } else if (mode === 'syncing') {
+          dot.classList.add('bg-amber-500', 'animate-pulse');
+          txt.textContent = '同步中...';
+        } else if (mode === 'error') {
+          dot.classList.add('bg-crimson-600');
+          txt.textContent = '同步异常';
+        } else {
+          dot.classList.add('bg-emerald-500');
+          txt.textContent = '云端已同步';
+        }
+      }
+
+      /* =====================================================================
+       * 5. SMART POS PARSER & EXAM SENTENCE HIGHLIGHTER
+       * ===================================================================== */
+      const POS_COLORS = {
+        'n.': 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/35 dark:text-blue-300 dark:border-blue-800',
+        'v.': 'bg-crimson-50 text-crimson-700 border-crimson-200 dark:bg-crimson-900/35 dark:text-crimson-300 dark:border-crimson-800',
+        'vt.': 'bg-crimson-50 text-crimson-700 border-crimson-200 dark:bg-crimson-900/35 dark:text-crimson-300 dark:border-crimson-800',
+        'vi.': 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/35 dark:text-rose-300 dark:border-rose-800',
+        'vlink.': 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/35 dark:text-rose-300 dark:border-rose-800',
+        'adj.': 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/35 dark:text-emerald-300 dark:border-emerald-800',
+        'adv.': 'bg-violet-50 text-violet-700 border-violet-200 dark:bg-violet-900/35 dark:text-violet-300 dark:border-violet-800',
+        'prep.': 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-900/35 dark:text-amber-300 dark:border-amber-800',
+        'conj.': 'bg-cyan-50 text-cyan-800 border-cyan-200 dark:bg-cyan-900/35 dark:text-cyan-300 dark:border-cyan-800',
+        'pron.': 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-900/35 dark:text-indigo-300 dark:border-indigo-800',
+        'det.': 'bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-900/35 dark:text-teal-300 dark:border-teal-800',
+        'suff.': 'bg-stone-100 text-stone-700 border-stone-300 dark:bg-slate-700 dark:text-slate-300 dark:border-slate-600',
+      };
+
+      function formatMeaningWithPOS(rawMeaning) {
+        const safe = escapeHtml(rawMeaning || '暂无释义');
+        // Match common POS tags like n. vt. vi. adj. adv. prep. conj. pron. det. vlink. suff. v.
+        const posRegex = /\b(vlink|prep|conj|pron|suff|adj|adv|det|vt|vi|v|n)\./gi;
+        return safe.replace(posRegex, (match) => {
+          const key = match.toLowerCase();
+          const cls = POS_COLORS[key] || 'bg-stone-100 text-stone-700 border-stone-200 dark:bg-slate-700 dark:text-slate-300 dark:border-slate-600';
+          return `<span class="inline-block font-serif italic font-semibold text-[11px] leading-none px-1.5 py-0.5 mr-1 rounded border align-baseline ${cls}">${match}</span>`;
+        });
+      }
+
+      /**
+       * Automatically highlights the target word and common English inflections
+       * (-s, -es, -ed, -ing, -er, -est, -ly, -ied, -ies, doubled consonant, dropped -e).
+       */
+      function highlightWordInSentence(sentence, targetWord) {
+        const safeText = escapeHtml(sentence || '');
+        const cleanWord = String(targetWord || '').trim();
+        if (!cleanWord) return safeText;
+
+        const forms = new Set([escapeRegex(cleanWord)]);
+        const lower = cleanWord.toLowerCase();
+
+        // Standard inflection stem rules
+        if (/^[a-zA-Z]+$/.test(lower) && lower.length >= 3) {
+          // Base + common suffixes
+          forms.add(escapeRegex(lower) + '(?:s|es|ed|ing|er|est|ly|al|ally)?');
+
+          // Ends with -e (e.g. restore -> restoring, restored)
+          if (lower.endsWith('e') && lower.length > 3) {
+            const stem = escapeRegex(lower.slice(0, -1));
+            forms.add(stem + '(?:ing|ed|er|est|s|d)');
+          }
+          // Ends with -y (e.g. quality -> qualities, carry -> carried)
+          if (lower.endsWith('y') && lower.length > 3) {
+            const stem = escapeRegex(lower.slice(0, -1));
+            forms.add(stem + '(?:ies|ied|ier|iest|ily)');
+          }
+          // Doubled final consonant (e.g. plan -> planned, planning)
+          const lastChar = lower[lower.length - 1];
+          if (/[bcdfgklmnprstvz]/.test(lastChar)) {
+            forms.add(escapeRegex(lower + lastChar) + '(?:ed|ing|er|est)');
+          }
+          // Ends with -ic (e.g. practical -> practically, classic -> classically)
+          if (lower.endsWith('ic')) {
+            forms.add(escapeRegex(lower) + 'ally');
+          }
+          // Ends with -al (e.g. practical -> practically)
+          if (lower.endsWith('al')) {
+            forms.add(escapeRegex(lower) + 'ly');
+          }
+        }
+
+        try {
+          const pattern = new RegExp(`\\b(${Array.from(forms).join('|')})\\b`, 'gi');
+          return safeText.replace(pattern, '<span class="word-hl">$1</span>');
+        } catch {
+          return safeText;
+        }
+      }
+
+      /* =====================================================================
+       * 6. WEB SPEECH API PRONUNCIATION
+       * ===================================================================== */
+      function speakText(text, triggerBtn = null) {
+        if (!('speechSynthesis' in window)) {
+          showToast('当前浏览器不支持语音朗读', 'error');
+          return;
+        }
+        try {
+          window.speechSynthesis.cancel();
+          const utter = new SpeechSynthesisUtterance(String(text || ''));
+          utter.lang = state.settings.accent || 'en-US';
+          utter.rate = text.includes(' ') ? 0.96 : 0.92;
+
+          if (triggerBtn) {
+            triggerBtn.classList.add('speaking-pulse', 'text-crimson-700', 'dark:text-crimson-400');
+            const cleanup = () => triggerBtn.classList.remove('speaking-pulse', 'text-crimson-700', 'dark:text-crimson-400');
+            utter.onend = cleanup;
+            utter.onerror = cleanup;
+          }
+          window.speechSynthesis.speak(utter);
+        } catch (err) {
+          console.error('Speech error:', err);
+        }
+      }
+
+      /* =====================================================================
+       * 7. BACKEND API LAYER (Relative ./api/... + Offline Fallback)
+       * ===================================================================== */
+      function saveOfflineState() {
+        try {
+          localStorage.setItem(LOCAL_FALLBACK_KEY, JSON.stringify({
+            mastered: Array.from(state.mastered),
+            notebook: Array.from(state.notebook),
+            settings: state.settings,
+          }));
+        } catch (e) {
+          console.warn('localStorage write failed:', e);
+        }
+      }
+
+      function loadOfflineState() {
+        try {
+          const raw = localStorage.getItem(LOCAL_FALLBACK_KEY);
+          if (!raw) return { mastered: [], notebook: [], settings: {} };
+          return JSON.parse(raw);
+        } catch {
+          return { mastered: [], notebook: [], settings: {} };
+        }
+      }
+
+      function buildOfflineMeta() {
+        const grouped = new Map();
+        for (const item of SAMPLE_WORDS) {
+          if (!grouped.has(item.page)) grouped.set(item.page, []);
+          grouped.get(item.page).push(item);
+        }
+        const units = Array.from(grouped.entries()).map(([page, list]) => {
+          state.unitCache.set(page, list);
+          return { page, count: list.length, words: list.map((w) => w.word) };
+        });
+        return {
+          version: 'offline-sample',
+          total_words: SAMPLE_WORDS.length,
+          total_units: units.length,
+          units,
+        };
+      }
+
+      async function apiFetchJson(url, options = {}) {
+        const res = await fetch(url, {
+          headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+          ...options,
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+      }
+
+      async function apiLoadInitial() {
+        updateSyncIndicator('syncing');
+        try {
+          const [meta, progress] = await Promise.all([
+            apiFetchJson('./api/meta'),
+            apiFetchJson('./api/progress'),
+          ]);
+          state.offlineMode = false;
+          state.meta = meta;
+          state.mastered = new Set(progress.mastered || []);
+          state.notebook = new Set(progress.notebook || []);
+          state.settings = {
+            darkMode: Boolean(progress.settings?.darkMode),
+            lastUnit: progress.settings?.lastUnit || null,
+            accent: progress.settings?.accent || 'en-US',
+          };
+          els.offlineBanner.classList.add('hidden');
+          updateSyncIndicator('synced');
+        } catch (err) {
+          console.info('Backend unreachable, entering offline preview mode:', err.message);
+          state.offlineMode = true;
+          state.meta = buildOfflineMeta();
+          const saved = loadOfflineState();
+          state.mastered = new Set(saved.mastered || []);
+          state.notebook = new Set(saved.notebook || []);
+          state.settings = {
+            darkMode: Boolean(saved.settings?.darkMode),
+            lastUnit: saved.settings?.lastUnit || null,
+            accent: saved.settings?.accent || 'en-US',
+          };
+          els.offlineBanner.classList.remove('hidden');
+          updateSyncIndicator('offline');
+        }
+
+        // Preserve sorted unit order from meta
+        state.unitOrder = (state.meta.units || []).map((u) => u.page);
+      }
+
+      async function apiFetchUnit(unitName) {
+        if (state.unitCache.has(unitName)) {
+          return state.unitCache.get(unitName);
+        }
+        if (state.offlineMode) {
+          const list = SAMPLE_WORDS.filter((w) => w.page === unitName);
+          state.unitCache.set(unitName, list);
+          return list;
+        }
+        const words = await apiFetchJson(`./api/unit/${encodeURIComponent(unitName)}`);
+        state.unitCache.set(unitName, words);
+        return words;
+      }
+
+      function scheduleNextUnitPrefetch(currentUnitName) {
+        const idx = state.unitOrder.indexOf(currentUnitName);
+        if (idx === -1 || idx + 1 >= state.unitOrder.length) return;
+        const nextUnit = state.unitOrder[idx + 1];
+        if (state.unitCache.has(nextUnit) || state.prefetching.has(nextUnit) || state.offlineMode) return;
+
+        const doPrefetch = () => {
+          if (state.unitCache.has(nextUnit) || state.prefetching.has(nextUnit)) return;
+          state.prefetching.add(nextUnit);
+          apiFetchUnit(nextUnit)
+            .catch(() => {})
+            .finally(() => state.prefetching.delete(nextUnit));
+        };
+
+        if (typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(doPrefetch, { timeout: 2500 });
+        } else {
+          setTimeout(doPrefetch, 900);
+        }
+      }
+
+      async function apiFetchWordsByList(wordKeys) {
+        if (!wordKeys.length) return { total: 0, words: [] };
+        if (state.offlineMode) {
+          const keySet = new Set(wordKeys.map((w) => w.toLowerCase()));
+          const matched = SAMPLE_WORDS.filter((item) => keySet.has(item.word.toLowerCase()));
+          return { total: matched.length, words: matched };
+        }
+        return await apiFetchJson('./api/words', {
+          method: 'POST',
+          body: JSON.stringify({ words: wordKeys }),
+        });
+      }
+
+      async function apiSearch(q) {
+        if (state.offlineMode) {
+          const low = q.trim().toLowerCase();
+          const matched = SAMPLE_WORDS.filter(
+            (item) => item.word.toLowerCase().includes(low) || item.meaning.toLowerCase().includes(low)
+          );
+          return { query: q, total: matched.length, results: matched };
+        }
+        return await apiFetchJson(`./api/search?q=${encodeURIComponent(q)}&limit=60`);
+      }
+
+      async function apiTranslate(text) {
+        const key = String(text || '').trim();
+        if (!key) return '';
+        if (state.offlineMode) return '';
+        if (translationCache.has(key)) return translationCache.get(key);
+
+        const data = await apiFetchJson(`./api/translate?q=${encodeURIComponent(key)}&sl=en&tl=zh-CN`);
+        const t = data.translation || '';
+        translationCache.set(key, t);
+        return t;
+      }
+
+      // 只翻译当前已展开的例句占位元素，避免未展开时产生任何请求
+      function translateVisibleExamples() {
+        const nodes = els.wordListRoot.querySelectorAll('[data-translate-src]:not([data-translated])');
+        nodes.forEach((node) => {
+          const src = node.dataset.translateSrc;
+          if (!src) return;
+          node.dataset.translated = '1';
+
+          let p = translationPending.get(src);
+          if (!p) {
+            p = apiTranslate(src).catch(() => '');
+            translationPending.set(src, p);
+            p.finally(() => translationPending.delete(src));
+          }
+          p.then((t) => {
+            if (t) node.textContent = t;
+            else node.remove();
+          });
+        });
+      }
+
+      async function apiToggleProgress(word, type, value) {
+        if (state.offlineMode) {
+          saveOfflineState();
+          return;
+        }
+        state.pendingSyncs++;
+        updateSyncIndicator('syncing');
+        try {
+          await apiFetchJson('./api/progress/toggle', {
+            method: 'POST',
+            body: JSON.stringify({ word, type, value }),
+          });
+        } catch (err) {
+          console.error('Toggle sync error:', err);
+          updateSyncIndicator('error');
+          showToast('云端同步失败，请检查网络连接', 'error');
+          return;
+        } finally {
+          state.pendingSyncs = Math.max(0, state.pendingSyncs - 1);
+          if (state.pendingSyncs === 0 && !state.offlineMode) {
+            updateSyncIndicator('synced');
+          }
+        }
+      }
+
+      async function apiSaveSettings(partial) {
+        Object.assign(state.settings, partial);
+        if (state.offlineMode) {
+          saveOfflineState();
+          return;
+        }
+        state.pendingSyncs++;
+        updateSyncIndicator('syncing');
+        try {
+          await apiFetchJson('./api/settings', {
+            method: 'POST',
+            body: JSON.stringify(partial),
+          });
+        } catch (err) {
+          console.error('Settings sync error:', err);
+          updateSyncIndicator('error');
+          return;
+        } finally {
+          state.pendingSyncs = Math.max(0, state.pendingSyncs - 1);
+          if (state.pendingSyncs === 0 && !state.offlineMode) {
+            updateSyncIndicator('synced');
+          }
+        }
+      }
+
+      async function apiBatchImport(masteredArr, notebookArr) {
+        if (state.offlineMode) {
+          masteredArr.forEach((w) => state.mastered.add(w));
+          notebookArr.forEach((w) => state.notebook.add(w));
+          saveOfflineState();
+          return;
+        }
+        state.pendingSyncs++;
+        updateSyncIndicator('syncing');
+        try {
+          const res = await apiFetchJson('./api/progress/batch', {
+            method: 'POST',
+            body: JSON.stringify({
+              mastered: masteredArr,
+              notebook: notebookArr,
+              mode: 'merge',
+            }),
+          });
+          state.mastered = new Set(res.mastered || []);
+          state.notebook = new Set(res.notebook || []);
+        } finally {
+          state.pendingSyncs = Math.max(0, state.pendingSyncs - 1);
+          if (state.pendingSyncs === 0 && !state.offlineMode) {
+            updateSyncIndicator('synced');
+          }
+        }
+      }
+
+      /* =====================================================================
+       * 8. THEME & TOOLBAR UI UPDATES
+       * ===================================================================== */
+      function applyTheme() {
+        const isDark = Boolean(state.settings.darkMode);
+        document.documentElement.classList.toggle('dark', isDark);
+        els.themeLabel.textContent = isDark ? '切换纸质浅色' : '切换深色模式';
+      }
+
+      function updateToolbarControls() {
+        // View Mode buttons
+        const activeBtnCls = 'bg-paper-card dark:bg-slate-700 text-crimson-700 dark:text-crimson-400 shadow-sm';
+        const idleBtnCls = 'text-ink-muted dark:text-slate-400 hover:text-ink-primary dark:hover:text-slate-200';
+        els.modeCard.className = `view-mode-btn px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${state.viewMode === 'card' ? activeBtnCls : idleBtnCls}`;
+        els.modeList.className = `view-mode-btn px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${state.viewMode === 'list' ? activeBtnCls : idleBtnCls}`;
+
+        // Mask buttons
+        const applyToggleStyle = (btn, active) => {
+          if (active) {
+            btn.className = 'px-3 py-2 rounded-xl text-xs font-semibold border border-crimson-700 dark:border-crimson-500 bg-crimson-50 dark:bg-crimson-900/40 text-crimson-700 dark:text-crimson-300 transition-all flex items-center gap-1.5';
+          } else {
+            btn.className = 'px-3 py-2 rounded-xl text-xs font-semibold border border-paper-border dark:border-slate-700 bg-paper-card dark:bg-slate-800 text-ink-primary dark:text-slate-200 hover:border-crimson-700/50 transition-all flex items-center gap-1.5';
+          }
+        };
+        applyToggleStyle(els.btnMaskMeaning, state.maskMeaning);
+        applyToggleStyle(els.btnMaskWord, state.maskWord);
+
+        // Accent label
+        els.accentLabel.textContent = state.settings.accent === 'en-GB' ? '英音' : '美音';
+
+        // Filter pills
+        els.filterPills.querySelectorAll('.filter-pill').forEach((btn) => {
+          const isCurrent = btn.dataset.filter === state.filter;
+          btn.className = isCurrent
+            ? 'filter-pill px-3 py-1 rounded-full text-xs font-semibold transition-all bg-crimson-700 text-white shadow-sm'
+            : 'filter-pill px-3 py-1 rounded-full text-xs font-semibold transition-all bg-paper-subtle dark:bg-slate-800 text-ink-muted dark:text-slate-300 hover:bg-stone-200/80 dark:hover:bg-slate-700';
+        });
+
+        // Expand/collapse all examples label
+        els.toggleAllExamplesLabel.textContent = state.allExamplesExpanded ? '收起本页例句' : '展开本页例句';
+        els.btnToggleAllExamples.classList.toggle('hidden', state.viewMode !== 'card');
+      }
+
+      /* =====================================================================
+       * 9. SIDEBAR & PROGRESS RENDERING (Using Lightweight ./api/meta)
+       * ===================================================================== */
+      function renderSidebarAndProgress() {
+        if (!state.meta) return;
+        const units = state.meta.units || [];
+        const totalWords = state.meta.total_words || 0;
+        const totalUnits = state.meta.total_units || units.length;
+
+        // Calculate global stats accurately from meta.units
+        let masteredCount = 0;
+        const allWordSet = new Set();
+        for (const u of units) {
+          for (const w of u.words) {
+            if (!allWordSet.has(w)) {
+              allWordSet.add(w);
+              if (state.mastered.has(w)) masteredCount++;
+            }
+          }
+        }
+        const effectiveTotal = allWordSet.size || totalWords;
+        const pct = effectiveTotal > 0 ? Math.round((masteredCount / effectiveTotal) * 100) : 0;
+
+        els.datasetSubtitle.textContent = `共 ${totalWords} 词 · ${totalUnits} 个单元`;
+        els.globalProgressText.textContent = `${masteredCount} / ${effectiveTotal} (${pct}%)`;
+        els.globalProgressBar.style.width = `${pct}%`;
+
+        els.badgeNotebook.textContent = state.notebook.size;
+        els.badgeUnmastered.textContent = Math.max(0, effectiveTotal - masteredCount);
+
+        // Highlight active quick views
+        document.querySelectorAll('.nav-item[data-nav-view]').forEach((btn) => {
+          const isActive = !state.searchQuery && state.activeView === btn.dataset.navView;
+          btn.classList.toggle('bg-crimson-50', isActive);
+          btn.classList.toggle('text-crimson-800', isActive);
+          btn.classList.toggle('dark:bg-crimson-900/35', isActive);
+          btn.classList.toggle('dark:text-crimson-300', isActive);
+        });
+
+        // Group units by category prefix before "Unit"
+        const groups = new Map();
+        for (const u of units) {
+          const { group, label } = splitUnitPage(u.page);
+          if (!groups.has(group)) groups.set(group, []);
+          groups.get(group).push({ ...u, label });
+        }
+
+        const htmlParts = [];
+        for (const [groupName, groupUnits] of groups.entries()) {
+          groupUnits.sort((a, b) => naturalCompare(a.page, b.page));
+          const isCollapsed = state.collapsedGroups.has(groupName);
+          const groupTotal = groupUnits.reduce((acc, u) => acc + u.count, 0);
+
+          htmlParts.push(`
+            <div class="rounded-xl overflow-hidden">
+              <button data-toggle-group="${escapeHtml(groupName)}" class="w-full flex items-center justify-between px-2.5 py-2 text-xs font-bold tracking-wide text-ink-muted dark:text-slate-400 hover:text-ink-primary dark:hover:text-slate-200 transition-colors">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 transition-transform duration-150 ${isCollapsed ? '-rotate-90' : ''}" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                  <span>${escapeHtml(groupName)}</span>
+                </span>
+                <span class="text-[11px] font-medium opacity-75 tabular-nums">${groupUnits.length} 单元 · ${groupTotal} 词</span>
+              </button>
+              <div class="${isCollapsed ? 'hidden' : 'space-y-1 mt-0.5 pl-1'}">
+                ${groupUnits.map((u) => {
+                  const uMastered = u.words.reduce((c, w) => c + (state.mastered.has(w) ? 1 : 0), 0);
+                  const uPct = u.count > 0 ? Math.round((uMastered / u.count) * 100) : 0;
+                  const isActive = !state.searchQuery && state.activeView === u.page;
+                  const doneAll = u.count > 0 && uMastered === u.count;
+                  return `
+                    <button data-select-unit="${escapeHtml(u.page)}" class="w-full text-left px-3 py-2 rounded-xl transition-all ${
+                      isActive
+                        ? 'bg-crimson-50 dark:bg-crimson-900/35 border border-crimson-200 dark:border-crimson-800/70'
+                        : 'border border-transparent hover:bg-paper-subtle dark:hover:bg-slate-700/60'
+                    }">
+                      <div class="flex items-center justify-between gap-2 text-[13px] mb-1">
+                        <span class="font-medium truncate ${isActive ? 'text-crimson-800 dark:text-crimson-300 font-semibold' : 'text-ink-primary dark:text-slate-200'}">
+                          ${escapeHtml(u.label)}
+                        </span>
+                        <span class="text-[11px] tabular-nums shrink-0 ${doneAll ? 'text-emerald-600 dark:text-emerald-400 font-semibold' : 'text-ink-muted dark:text-slate-400'}">
+                          ${uMastered}/${u.count}
+                        </span>
+                      </div>
+                      <div class="w-full h-1 rounded-full bg-stone-200/80 dark:bg-slate-700 overflow-hidden">
+                        <div class="h-full rounded-full transition-all duration-300 ${doneAll ? 'bg-emerald-500' : 'bg-crimson-700 dark:bg-crimson-400'}" style="width: ${uPct}%"></div>
+                      </div>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `);
+        }
+
+        els.unitNavContainer.innerHTML = htmlParts.join('');
+      }
+
+      /* =====================================================================
+       * 10. VIEW LOADING & NAVIGATION (On-Demand + Next-Unit Prefetch)
+       * ===================================================================== */
+      function renderLoadingSkeleton() {
+        els.wordListRoot.innerHTML = `
+          <div class="space-y-4">
+            ${Array.from({ length: 5 }).map(() => `
+              <div class="bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 rounded-2xl p-5 animate-pulse space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="h-7 w-40 bg-paper-subtle dark:bg-slate-700 rounded-lg"></div>
+                  <div class="h-7 w-24 bg-paper-subtle dark:bg-slate-700 rounded-lg"></div>
+                </div>
+                <div class="h-4 w-3/4 bg-paper-subtle dark:bg-slate-700 rounded"></div>
+                <div class="h-4 w-1/2 bg-paper-subtle dark:bg-slate-700 rounded"></div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      async function openUnit(unitName, persistLastUnit = true) {
+        state.activeView = unitName;
+        state.searchQuery = '';
+        state.searchResults = null;
+        els.searchInput.value = '';
+        els.btnClearSearch.classList.add('hidden');
+        state.allExamplesExpanded = false;
+        state.expandedDrawers.clear();
+        els.loadMoreContainer.classList.add('hidden');
+
+        closeMobileSidebar();
+        renderSidebarAndProgress();
+        updateToolbarControls();
+
+        if (!state.unitCache.has(unitName)) {
+          state.isLoadingView = true;
+          els.currentViewTitle.textContent = unitName;
+          els.currentViewStats.textContent = '加载中...';
+          renderLoadingSkeleton();
+        }
+
+        try {
+          const words = await apiFetchUnit(unitName);
+          if (state.activeView !== unitName) return; // User switched away mid-flight
+          state.currentWords = words;
+          state.isLoadingView = false;
+          renderMainContent();
+          window.scrollTo({ top: 0, behavior: 'instant' });
+
+          if (persistLastUnit && state.settings.lastUnit !== unitName) {
+            apiSaveSettings({ lastUnit: unitName });
+          }
+
+          // Silently prefetch ONLY the next unit when browser is idle
+          scheduleNextUnitPrefetch(unitName);
+        } catch (err) {
+          console.error('Unit load error:', err);
+          state.isLoadingView = false;
+          els.wordListRoot.innerHTML = `
+            <div class="text-center py-16 bg-paper-card dark:bg-slate-800 rounded-2xl border border-paper-border dark:border-slate-700">
+              <p class="text-crimson-700 dark:text-crimson-400 font-semibold">单元加载失败</p>
+              <p class="text-xs text-ink-muted dark:text-slate-400 mt-1">${escapeHtml(err.message)}</p>
+            </div>
+          `;
+        }
+      }
+
+      async function openNotebookView() {
+        state.activeView = 'NOTEBOOK';
+        state.searchQuery = '';
+        state.searchResults = null;
+        els.searchInput.value = '';
+        els.btnClearSearch.classList.add('hidden');
+        state.allExamplesExpanded = false;
+        state.expandedDrawers.clear();
+        els.loadMoreContainer.classList.add('hidden');
+
+        closeMobileSidebar();
+        renderSidebarAndProgress();
+        updateToolbarControls();
+
+        const keys = Array.from(state.notebook);
+        if (!keys.length) {
+          state.currentWords = [];
+          renderMainContent();
+          return;
+        }
+
+        state.isLoadingView = true;
+        els.currentViewTitle.textContent = '全部生词本';
+        els.currentViewStats.textContent = '加载中...';
+        renderLoadingSkeleton();
+
+        try {
+          const res = await apiFetchWordsByList(keys);
+          if (state.activeView !== 'NOTEBOOK') return;
+          state.currentWords = res.words || [];
+          state.isLoadingView = false;
+          renderMainContent();
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        } catch (err) {
+          state.isLoadingView = false;
+          showToast('生词本加载失败', 'error');
+        }
+      }
+
+      async function openUnmasteredView() {
+        state.activeView = 'UNMASTERED';
+        state.searchQuery = '';
+        state.searchResults = null;
+        els.searchInput.value = '';
+        els.btnClearSearch.classList.add('hidden');
+        state.allExamplesExpanded = false;
+        state.expandedDrawers.clear();
+
+        closeMobileSidebar();
+        renderSidebarAndProgress();
+        updateToolbarControls();
+
+        // Compute full list of unmastered word strings from meta.units
+        const seen = new Set();
+        const unmasteredKeys = [];
+        for (const u of (state.meta?.units || [])) {
+          for (const w of u.words) {
+            if (!seen.has(w)) {
+              seen.add(w);
+              if (!state.mastered.has(w)) unmasteredKeys.push(w);
+            }
+          }
+        }
+
+        state.unmasteredAllKeys = unmasteredKeys;
+        state.unmasteredOffset = 0;
+        state.currentWords = [];
+
+        if (!unmasteredKeys.length) {
+          els.loadMoreContainer.classList.add('hidden');
+          renderMainContent();
+          return;
+        }
+
+        state.isLoadingView = true;
+        els.currentViewTitle.textContent = '未掌握词库';
+        els.currentViewStats.textContent = `共 ${unmasteredKeys.length} 词`;
+        renderLoadingSkeleton();
+
+        await loadNextUnmasteredChunk();
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+
+      async function loadNextUnmasteredChunk() {
+        const nextSlice = state.unmasteredAllKeys.slice(
+          state.unmasteredOffset,
+          state.unmasteredOffset + UNMASTERED_CHUNK_SIZE
+        );
+        if (!nextSlice.length) {
+          els.loadMoreContainer.classList.add('hidden');
+          return;
+        }
+
+        els.btnLoadMore.disabled = true;
+        els.btnLoadMore.textContent = '加载中...';
+
+        try {
+          const res = await apiFetchWordsByList(nextSlice);
+          if (state.activeView !== 'UNMASTERED') return;
+          state.currentWords = state.currentWords.concat(res.words || []);
+          state.unmasteredOffset += nextSlice.length;
+          state.isLoadingView = false;
+          renderMainContent();
+        } catch (err) {
+          state.isLoadingView = false;
+          showToast('加载未掌握词条失败', 'error');
+        } finally {
+          els.btnLoadMore.disabled = false;
+          const remaining = state.unmasteredAllKeys.length - state.unmasteredOffset;
+          if (remaining > 0 && state.activeView === 'UNMASTERED' && !state.searchQuery) {
+            els.loadMoreContainer.classList.remove('hidden');
+            els.btnLoadMore.textContent = `加载更多（剩余 ${remaining} 词）`;
+          } else {
+            els.loadMoreContainer.classList.add('hidden');
+          }
+        }
+      }
+
+      /* =====================================================================
+       * 11. WORD LIST / CARD RENDERING
+       * ===================================================================== */
+      function getVisibleWords() {
+        const base = state.searchResults ? (state.searchResults.results || []) : state.currentWords;
+        if (state.filter === 'unmastered') {
+          return base.filter((w) => !state.mastered.has(w.word));
+        }
+        if (state.filter === 'notebook') {
+          return base.filter((w) => state.notebook.has(w.word));
+        }
+        return base;
+      }
+
+      function updateUnitPrevNextControls() {
+        const isUnitView = !state.searchResults && state.activeView && state.activeView !== 'NOTEBOOK' && state.activeView !== 'UNMASTERED';
+        els.unitQuickArrows.classList.toggle('hidden', !isUnitView);
+        els.unitQuickArrows.classList.toggle('sm:flex', isUnitView);
+        els.unitFooterNav.classList.toggle('hidden', !isUnitView);
+
+        if (!isUnitView) return;
+
+        const idx = state.unitOrder.indexOf(state.activeView);
+        const prevUnit = idx > 0 ? state.unitOrder[idx - 1] : null;
+        const nextUnit = idx >= 0 && idx + 1 < state.unitOrder.length ? state.unitOrder[idx + 1] : null;
+
+        els.btnPrevUnit.disabled = !prevUnit;
+        els.btnNextUnit.disabled = !nextUnit;
+        els.btnFooterPrev.disabled = !prevUnit;
+        els.btnFooterNext.disabled = !nextUnit;
+
+        els.footerPrevLabel.textContent = prevUnit ? `上一单元 · ${splitUnitPage(prevUnit).label}` : '已是第一单元';
+        els.footerNextLabel.textContent = nextUnit ? `下一单元 · ${splitUnitPage(nextUnit).label}` : '已是最后一单元';
+      }
+
+      function renderMainContent() {
+        const words = getVisibleWords();
+
+        // Update header title & stats
+        if (state.searchResults) {
+          els.currentViewTitle.textContent = `搜索：“${state.searchResults.query}”`;
+          els.currentViewStats.textContent = `共匹配 ${state.searchResults.total} 词（展示 ${words.length} 词）`;
+          els.loadMoreContainer.classList.add('hidden');
+        } else if (state.activeView === 'NOTEBOOK') {
+          els.currentViewTitle.textContent = '全部生词本';
+          els.currentViewStats.textContent = `${words.length} 词`;
+        } else if (state.activeView === 'UNMASTERED') {
+          els.currentViewTitle.textContent = '未掌握词库';
+          els.currentViewStats.textContent = `已加载 ${words.length} / ${state.unmasteredAllKeys.length} 词`;
+        } else {
+          const unitInfo = splitUnitPage(state.activeView || '');
+          els.currentViewTitle.textContent = `${unitInfo.group} · ${unitInfo.label}`;
+          const masteredHere = state.currentWords.filter((w) => state.mastered.has(w.word)).length;
+          els.currentViewStats.textContent = `${words.length} 词 · 已掌握 ${masteredHere}/${state.currentWords.length}`;
+        }
+
+        updateUnitPrevNextControls();
+
+        if (!words.length) {
+          els.wordListRoot.innerHTML = `
+            <div class="text-center py-20 px-6 bg-paper-card dark:bg-slate-800 rounded-2xl border border-paper-border dark:border-slate-700 shadow-card">
+              <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-paper-subtle dark:bg-slate-700 flex items-center justify-center text-ink-muted dark:text-slate-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              </div>
+              <p class="text-sm font-semibold text-ink-primary dark:text-slate-200">当前视图暂无符合条件的单词</p>
+              <p class="text-xs text-ink-muted dark:text-slate-400 mt-1">可以切换顶部的筛选条件，或在左侧选择其他单元继续学习。</p>
+            </div>
+          `;
+          return;
+        }
+
+        if (state.viewMode === 'list') {
+          renderFastScanList(words);
+        } else {
+          renderDetailedCards(words);
+        }
+      }
+
+      function renderExamplesHtml(item) {
+        const examples = (item.examples || []).slice().sort((a, b) => (b.y || 0) - (a.y || 0));
+        if (!examples.length) {
+          return `<p class="text-xs text-ink-muted dark:text-slate-400 py-2">暂无收录真题例句</p>`;
+        }
+
+        const activeTag = state.drawerSourceFilter.get(item.word) || '全部';
+        const showFilterTabs = examples.length > 5;
+        const filtered = activeTag === '全部'
+          ? examples
+          : examples.filter((ex) => (ex.src || '') === activeTag);
+
+        const tabsHtml = showFilterTabs ? `
+          <div class="flex flex-wrap items-center gap-1.5 mb-3">
+            ${['全部', '正文', '选项', '题干'].map((tag) => {
+              const cnt = tag === '全部' ? examples.length : examples.filter((e) => (e.src || '') === tag).length;
+              if (tag !== '全部' && cnt === 0) return '';
+              const active = activeTag === tag;
+              return `
+                <button data-ex-filter="${escapeHtml(tag)}" data-word="${escapeHtml(item.word)}" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-colors ${
+                  active
+                    ? 'bg-crimson-700 text-white'
+                    : 'bg-paper-card dark:bg-slate-800 border border-paper-border dark:border-slate-700 text-ink-muted dark:text-slate-300 hover:border-crimson-700/40'
+                }">${tag} (${cnt})</button>
+              `;
+            }).join('')}
+          </div>
+        ` : '';
+
+        const listHtml = filtered.map((ex) => `
+          <div class="p-3.5 rounded-xl bg-paper-card dark:bg-slate-800/90 border border-paper-border/80 dark:border-slate-700/80 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+                ${ex.y ? `<span class="px-2 py-0.5 rounded-md font-semibold bg-crimson-50 text-crimson-800 dark:bg-crimson-900/40 dark:text-crimson-300 tabular-nums">${escapeHtml(ex.y)}</span>` : ''}
+                ${ex.t ? `<span class="px-2 py-0.5 rounded-md font-medium bg-paper-subtle text-ink-muted dark:bg-slate-700 dark:text-slate-300">${escapeHtml(({matching:'新题型',heading_matching:'小标题匹配',writing:'写作'})[ex.t] || ex.t)}</span>` : ''}
+                ${ex.src ? `<span class="px-2 py-0.5 rounded-md font-medium bg-stone-100 text-stone-600 dark:bg-slate-700/70 dark:text-slate-400">${escapeHtml(ex.src)}</span>` : ''}
+              </div>
+              <button data-speak-text="${escapeHtml(ex.txt || '')}" title="朗读例句" class="shrink-0 p-1.5 rounded-lg text-ink-muted dark:text-slate-400 hover:bg-paper-subtle dark:hover:bg-slate-700 hover:text-crimson-700 dark:hover:text-crimson-400 transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+              </button>
+            </div>
+            <p class="font-serif text-[15px] leading-relaxed text-ink-primary dark:text-slate-200">${highlightWordInSentence(ex.txt, item.word)}</p>
+            <div class="example-translation text-[13px] leading-relaxed text-ink-muted dark:text-slate-400 border-t border-paper-border/60 dark:border-slate-700/60 pt-2 mt-1" data-translate-src="${escapeHtml(ex.txt || '')}"></div>
+          </div>
+        `).join('');
+
+        return `${tabsHtml}<div class="space-y-2.5">${listHtml || '<p class="text-xs text-ink-muted py-2">该分类下暂无例句</p>'}</div>`;
+      }
+
+      function renderDetailedCards(words) {
+        const showUnitTag = Boolean(state.searchResults || state.activeView === 'NOTEBOOK' || state.activeView === 'UNMASTERED');
+
+        els.wordListRoot.innerHTML = `
+          <div class="space-y-4">
+            ${words.map((item, idx) => {
+              const isMastered = state.mastered.has(item.word);
+              const isNotebook = state.notebook.has(item.word);
+              const exCount = (item.examples || []).length;
+              const isDrawerOpen = state.allExamplesExpanded || state.expandedDrawers.has(item.word);
+
+              return `
+                <article data-word-card="${escapeHtml(item.word)}" class="group bg-paper-card dark:bg-slate-800 border ${
+                  isMastered
+                    ? 'border-emerald-200/90 dark:border-emerald-800/60 bg-emerald-50/15 dark:bg-slate-800'
+                    : 'border-paper-border dark:border-slate-700'
+                } rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden">
+
+                  <div class="p-4 sm:p-5 space-y-3">
+                    <!-- Card Header -->
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                      <div class="flex items-center gap-2.5 flex-wrap min-w-0">
+                        <span class="text-[11px] font-semibold tabular-nums px-2 py-0.5 rounded-md bg-paper-subtle dark:bg-slate-700 text-ink-muted dark:text-slate-400">
+                          #${item.index ?? (idx + 1)}
+                        </span>
+
+                        <!-- Headword with optional Mask -->
+                        <div data-mask-reveal class="${state.maskWord ? 'mask-active px-2 py-0.5' : ''}" data-mask-label="悬停或点击显示单词">
+                          <h3 class="mask-content font-serif text-2xl sm:text-[26px] font-bold tracking-tight ${
+                            isMastered ? 'text-emerald-800 dark:text-emerald-300' : 'text-ink-primary dark:text-white'
+                          } leading-none">${escapeHtml(item.word)}</h3>
+                        </div>
+
+                        <!-- Pronunciation Button -->
+                        <button data-speak-text="${escapeHtml(item.word)}" title="朗读单词" class="p-1.5 rounded-full text-ink-muted dark:text-slate-400 hover:bg-paper-subtle dark:hover:bg-slate-700 hover:text-crimson-700 dark:hover:text-crimson-400 transition-colors">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                        </button>
+
+                        <!-- Exam Frequency Badge -->
+                        ${item.count ? `
+                          <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-crimson-50 text-crimson-700 dark:bg-crimson-900/35 dark:text-crimson-300 tabular-nums">
+                            真题考频 ${item.count} 次
+                          </span>
+                        ` : ''}
+
+                        <!-- Source Unit Badge in Search / Virtual Views -->
+                        ${showUnitTag && item.page ? `
+                          <button data-jump-unit="${escapeHtml(item.page)}" class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-paper-subtle dark:bg-slate-700 text-ink-muted dark:text-slate-300 hover:text-crimson-700 dark:hover:text-crimson-400 transition-colors">
+                            ${escapeHtml(item.page)}
+                          </button>
+                        ` : ''}
+                      </div>
+
+                      <!-- Action Buttons: Mastered & Notebook -->
+                      <div class="flex items-center gap-1.5 shrink-0">
+                        <button data-toggle-mastered="${escapeHtml(item.word)}" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 ${
+                          isMastered
+                            ? 'bg-emerald-600 border-emerald-600 text-white shadow-sm'
+                            : 'bg-paper-card dark:bg-slate-800 border-paper-border dark:border-slate-600 text-ink-muted dark:text-slate-300 hover:border-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400'
+                        }">
+                          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                          <span>${isMastered ? '已掌握' : '掌握'}</span>
+                        </button>
+
+                        <button data-toggle-notebook="${escapeHtml(item.word)}" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1 ${
+                          isNotebook
+                            ? 'bg-amber-500 border-amber-500 text-white shadow-sm'
+                            : 'bg-paper-card dark:bg-slate-800 border-paper-border dark:border-slate-600 text-ink-muted dark:text-slate-300 hover:border-amber-400 hover:text-amber-600 dark:hover:text-amber-300'
+                        }">
+                          <svg class="w-3.5 h-3.5" fill="${isNotebook ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                          <span>生词本</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Parsed POS Meaning with optional Mask -->
+                    <div data-mask-reveal class="${state.maskMeaning ? 'mask-active py-1.5 px-2 -mx-2' : ''}" data-mask-label="悬停或点击查看中文释义">
+                      <div class="mask-content text-[15px] leading-relaxed text-ink-primary dark:text-slate-200">
+                        ${formatMeaningWithPOS(item.meaning)}
+                      </div>
+                    </div>
+
+                    <!-- Exam Examples Drawer Toggle -->
+                    ${exCount > 0 ? `
+                      <div class="pt-1 flex items-center justify-between">
+                        <button data-toggle-drawer="${escapeHtml(item.word)}" class="inline-flex items-center gap-1.5 text-xs font-semibold text-crimson-700 dark:text-crimson-400 hover:text-crimson-800 dark:hover:text-crimson-300 py-1 px-2 -ml-2 rounded-lg hover:bg-crimson-50/70 dark:hover:bg-crimson-900/25 transition-colors">
+                          <svg class="w-3.5 h-3.5 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                          <span>真题例句 (${exCount})</span>
+                        </button>
+                      </div>
+                    ` : ''}
+                  </div>
+
+                  <!-- Collapsible Exam Examples Drawer Body -->
+                  ${exCount > 0 && isDrawerOpen ? `
+                    <div class="px-4 sm:px-5 py-4 bg-paper-subtle/60 dark:bg-slate-900/50 border-t border-paper-border/80 dark:border-slate-700">
+                      ${renderExamplesHtml(item)}
+                    </div>
+                  ` : ''}
+                </article>
+              `;
+            }).join('')}
+          </div>
+        `;
+
+        // 展开的真题例句才翻译（懒加载），未展开不会产生请求
+        translateVisibleExamples();
+      }
+
+      function renderFastScanList(words) {
+        els.wordListRoot.innerHTML = `
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            ${words.map((item) => {
+              const isMastered = state.mastered.has(item.word);
+              const isNotebook = state.notebook.has(item.word);
+              return `
+                <div class="bg-paper-card dark:bg-slate-800 border ${
+                  isMastered
+                    ? 'border-emerald-200/90 dark:border-emerald-800/60'
+                    : 'border-paper-border dark:border-slate-700'
+                } rounded-xl p-3.5 shadow-card flex flex-col justify-between gap-2.5">
+                  <div class="flex items-start justify-between gap-2">
+                    <div class="flex items-center gap-2 flex-wrap min-w-0">
+                      <div data-mask-reveal class="${state.maskWord ? 'mask-active px-1.5 py-0.5' : ''}" data-mask-label="查看单词">
+                        <span class="mask-content font-serif text-xl font-bold ${isMastered ? 'text-emerald-700 dark:text-emerald-300' : 'text-ink-primary dark:text-white'}">${escapeHtml(item.word)}</span>
+                      </div>
+                      <button data-speak-text="${escapeHtml(item.word)}" class="p-1 rounded-full text-ink-muted dark:text-slate-400 hover:text-crimson-700 dark:hover:text-crimson-400 transition-colors" aria-label="发音">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                      </button>
+                      ${item.count ? `<span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-crimson-50 text-crimson-700 dark:bg-crimson-900/35 dark:text-crimson-300 tabular-nums">${item.count}次</span>` : ''}
+                    </div>
+                    <div class="flex items-center gap-1 shrink-0">
+                      <button data-toggle-mastered="${escapeHtml(item.word)}" title="标记已掌握" class="p-1.5 rounded-lg border transition-colors ${
+                        isMastered
+                          ? 'bg-emerald-600 border-emerald-600 text-white'
+                          : 'border-paper-border dark:border-slate-600 text-ink-muted dark:text-slate-400 hover:text-emerald-600'
+                      }">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                      </button>
+                      <button data-toggle-notebook="${escapeHtml(item.word)}" title="加入生词本" class="p-1.5 rounded-lg border transition-colors ${
+                        isNotebook
+                          ? 'bg-amber-500 border-amber-500 text-white'
+                          : 'border-paper-border dark:border-slate-600 text-ink-muted dark:text-slate-400 hover:text-amber-500'
+                      }">
+                        <svg class="w-3.5 h-3.5" fill="${isNotebook ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div data-mask-reveal class="${state.maskMeaning ? 'mask-active py-1 px-1.5 -mx-1.5' : ''}" data-mask-label="点击查看释义">
+                    <div class="mask-content text-xs leading-relaxed text-ink-muted dark:text-slate-300">
+                      ${formatMeaningWithPOS(item.meaning)}
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      }
+
+      /* =====================================================================
+       * 12. OPTIMISTIC PROGRESS TOGGLES
+       * ===================================================================== */
+      function toggleMastered(word) {
+        const nextVal = !state.mastered.has(word);
+        if (nextVal) state.mastered.add(word);
+        else state.mastered.delete(word);
+
+        renderSidebarAndProgress();
+        renderMainContent();
+        if (state.fcOpen) renderFlashcard();
+        apiToggleProgress(word, 'mastered', nextVal);
+      }
+
+      function toggleNotebook(word) {
+        const nextVal = !state.notebook.has(word);
+        if (nextVal) state.notebook.add(word);
+        else state.notebook.delete(word);
+
+        renderSidebarAndProgress();
+        renderMainContent();
+        if (state.fcOpen) renderFlashcard();
+        apiToggleProgress(word, 'notebook', nextVal);
+      }
+
+      /* =====================================================================
+       * 13. INTERACTIVE 3D FLASHCARD MODAL
+       * ===================================================================== */
+      function openFlashcardModal() {
+        const list = getVisibleWords();
+        if (!list.length) {
+          showToast('当前列表没有可背诵的单词', 'info');
+          return;
+        }
+        state.fcOpen = true;
+        state.fcList = list.slice();
+        state.fcIndex = 0;
+        state.fcFlipped = false;
+        els.fcModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        renderFlashcard();
+      }
+
+      function closeFlashcardModal() {
+        state.fcOpen = false;
+        els.fcModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      }
+
+      function renderFlashcard() {
+        if (!state.fcList.length) return;
+        const item = state.fcList[state.fcIndex];
+        const isMastered = state.mastered.has(item.word);
+        const isNotebook = state.notebook.has(item.word);
+
+        els.fcCounter.textContent = `${state.fcIndex + 1} / ${state.fcList.length}`;
+        els.fcInner.classList.toggle('is-flipped', state.fcFlipped);
+
+        els.fcUnitBadge.textContent = item.page || '';
+        els.fcFreqBadge.textContent = item.count ? `真题考频 ${item.count} 次` : '核心词汇';
+        els.fcWord.textContent = item.word;
+        els.fcBackWord.textContent = item.word;
+        els.fcBackFreq.textContent = item.count ? `考频 ${item.count} 次` : '';
+
+        els.fcStatusBadges.innerHTML = `
+          ${isMastered ? '<span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">已掌握</span>' : ''}
+          ${isNotebook ? '<span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">生词本</span>' : ''}
+        `;
+
+        els.fcMeaning.innerHTML = formatMeaningWithPOS(item.meaning);
+
+        const topExamples = (item.examples || []).slice().sort((a, b) => (b.y || 0) - (a.y || 0)).slice(0, 2);
+        els.fcExamples.innerHTML = topExamples.length
+          ? topExamples.map((ex) => `
+              <div class="p-3 rounded-xl bg-paper-subtle/75 dark:bg-slate-900/60 border border-paper-border dark:border-slate-700">
+                <div class="flex items-center gap-1.5 text-[11px] text-ink-muted dark:text-slate-400 mb-1">
+                  ${ex.y ? `<span class="font-semibold text-crimson-700 dark:text-crimson-400">${escapeHtml(ex.y)}</span>` : ''}
+                  ${ex.t ? `<span>${escapeHtml(ex.t)}</span>` : ''}
+                  ${ex.src ? `<span class="opacity-70">· ${escapeHtml(ex.src)}</span>` : ''}
+                </div>
+                <p class="font-serif text-sm leading-relaxed text-ink-primary dark:text-slate-200">${highlightWordInSentence(ex.txt, item.word)}</p>
+              </div>
+            `).join('')
+          : '<p class="text-xs text-ink-muted dark:text-slate-400">暂无收录真题例句</p>';
+
+        els.fcMasteredText.textContent = isMastered ? '取消掌握' : '已掌握';
+        els.fcNotebookText.textContent = isNotebook ? '移出生词' : '生词本';
+      }
+
+      function fcStep(delta) {
+        if (!state.fcList.length) return;
+        state.fcIndex = (state.fcIndex + delta + state.fcList.length) % state.fcList.length;
+        state.fcFlipped = false;
+        renderFlashcard();
+      }
+
+      /* =====================================================================
+       * 14. MOBILE SIDEBAR DRAWER HELPERS
+       * ===================================================================== */
+      function openMobileSidebar() {
+        els.sidebar.classList.remove('-translate-x-full');
+        els.mobileBackdrop.classList.remove('hidden');
+      }
+
+      function closeMobileSidebar() {
+        els.sidebar.classList.add('-translate-x-full');
+        els.mobileBackdrop.classList.add('hidden');
+      }
+
+      /* =====================================================================
+       * 15. EVENT BINDINGS
+       * ===================================================================== */
+      function bindEvents() {
+        // Mobile drawer
+        els.btnOpenSidebar.addEventListener('click', openMobileSidebar);
+        els.btnCloseSidebar.addEventListener('click', closeMobileSidebar);
+        els.mobileBackdrop.addEventListener('click', closeMobileSidebar);
+
+        // Quick smart views
+        document.querySelectorAll('.nav-item[data-nav-view]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            if (btn.dataset.navView === 'NOTEBOOK') openNotebookView();
+            else if (btn.dataset.navView === 'UNMASTERED') openUnmasteredView();
+          });
+        });
+
+        // Sidebar unit tree delegation
+        els.unitNavContainer.addEventListener('click', (e) => {
+          const groupBtn = e.target.closest('[data-toggle-group]');
+          if (groupBtn) {
+            const g = groupBtn.dataset.toggleGroup;
+            if (state.collapsedGroups.has(g)) state.collapsedGroups.delete(g);
+            else state.collapsedGroups.add(g);
+            renderSidebarAndProgress();
+            return;
+          }
+          const unitBtn = e.target.closest('[data-select-unit]');
+          if (unitBtn) {
+            openUnit(unitBtn.dataset.selectUnit);
+          }
+        });
+
+        // Prev / Next Unit navigation
+        const goRelativeUnit = (delta) => {
+          const idx = state.unitOrder.indexOf(state.activeView);
+          if (idx === -1) return;
+          const nextIdx = idx + delta;
+          if (nextIdx >= 0 && nextIdx < state.unitOrder.length) {
+            openUnit(state.unitOrder[nextIdx]);
+          }
+        };
+        els.btnPrevUnit.addEventListener('click', () => goRelativeUnit(-1));
+        els.btnNextUnit.addEventListener('click', () => goRelativeUnit(1));
+        els.btnFooterPrev.addEventListener('click', () => goRelativeUnit(-1));
+        els.btnFooterNext.addEventListener('click', () => goRelativeUnit(1));
+
+        // Load More Unmastered chunk
+        els.btnLoadMore.addEventListener('click', loadNextUnmasteredChunk);
+
+        // View mode switcher
+        els.modeCard.addEventListener('click', () => {
+          state.viewMode = 'card';
+          updateToolbarControls();
+          renderMainContent();
+        });
+        els.modeList.addEventListener('click', () => {
+          state.viewMode = 'list';
+          updateToolbarControls();
+          renderMainContent();
+        });
+        els.btnOpenFlashcard.addEventListener('click', openFlashcardModal);
+
+        // Self-test masks
+        els.btnMaskMeaning.addEventListener('click', () => {
+          state.maskMeaning = !state.maskMeaning;
+          updateToolbarControls();
+          renderMainContent();
+        });
+        els.btnMaskWord.addEventListener('click', () => {
+          state.maskWord = !state.maskWord;
+          updateToolbarControls();
+          renderMainContent();
+        });
+
+        // Voice accent toggle
+        els.btnAccentToggle.addEventListener('click', () => {
+          const nextAccent = state.settings.accent === 'en-GB' ? 'en-US' : 'en-GB';
+          apiSaveSettings({ accent: nextAccent });
+          updateToolbarControls();
+          showToast(`已切换为${nextAccent === 'en-GB' ? '英式发音' : '美式发音'}`);
+        });
+
+        // Dark mode toggle
+        els.btnThemeToggle.addEventListener('click', () => {
+          const nextDark = !state.settings.darkMode;
+          apiSaveSettings({ darkMode: nextDark });
+          applyTheme();
+        });
+
+        // Filter pills
+        els.filterPills.addEventListener('click', (e) => {
+          const pill = e.target.closest('[data-filter]');
+          if (!pill) return;
+          state.filter = pill.dataset.filter;
+          updateToolbarControls();
+          renderMainContent();
+        });
+
+        // Expand / Collapse all examples
+        els.btnToggleAllExamples.addEventListener('click', () => {
+          state.allExamplesExpanded = !state.allExamplesExpanded;
+          if (!state.allExamplesExpanded) state.expandedDrawers.clear();
+          updateToolbarControls();
+          renderMainContent();
+        });
+
+        // Debounced Global Search (300ms)
+        let searchTimer = null;
+        els.searchInput.addEventListener('input', (e) => {
+          const q = e.target.value.trim();
+          state.searchQuery = q;
+          els.btnClearSearch.classList.toggle('hidden', !q);
+
+          clearTimeout(searchTimer);
+          if (!q) {
+            state.searchResults = null;
+            els.searchSpinner.classList.add('hidden');
+            renderSidebarAndProgress();
+            renderMainContent();
+            return;
+          }
+
+          els.searchSpinner.classList.remove('hidden');
+          searchTimer = setTimeout(async () => {
+            try {
+              const res = await apiSearch(q);
+              if (state.searchQuery !== q) return;
+              state.searchResults = res;
+              renderSidebarAndProgress();
+              renderMainContent();
+            } catch (err) {
+              showToast('搜索请求失败', 'error');
+            } finally {
+              els.searchSpinner.classList.add('hidden');
+            }
+          }, 300);
+        });
+
+        els.btnClearSearch.addEventListener('click', () => {
+          els.searchInput.value = '';
+          state.searchQuery = '';
+          state.searchResults = null;
+          els.btnClearSearch.classList.add('hidden');
+          renderSidebarAndProgress();
+          renderMainContent();
+          els.searchInput.focus();
+        });
+
+        // Main word area delegation (speak, mastered, notebook, drawer, filter tabs, mask click-reveal, unit jump)
+        els.wordListRoot.addEventListener('click', (e) => {
+          const speakBtn = e.target.closest('[data-speak-text]');
+          if (speakBtn) {
+            e.stopPropagation();
+            speakText(speakBtn.dataset.speakText, speakBtn);
+            return;
+          }
+
+          const masterBtn = e.target.closest('[data-toggle-mastered]');
+          if (masterBtn) {
+            e.stopPropagation();
+            toggleMastered(masterBtn.dataset.toggleMastered);
+            return;
+          }
+
+          const noteBtn = e.target.closest('[data-toggle-notebook]');
+          if (noteBtn) {
+            e.stopPropagation();
+            toggleNotebook(noteBtn.dataset.toggleNotebook);
+            return;
+          }
+
+          const drawerBtn = e.target.closest('[data-toggle-drawer]');
+          if (drawerBtn) {
+            const w = drawerBtn.dataset.toggleDrawer;
+            if (state.allExamplesExpanded) {
+              // Switch out of global expand mode while collapsing this specific drawer
+              state.allExamplesExpanded = false;
+              getVisibleWords().forEach((item) => {
+                if (item.word !== w) state.expandedDrawers.add(item.word);
+              });
+              updateToolbarControls();
+            } else if (state.expandedDrawers.has(w)) {
+              state.expandedDrawers.delete(w);
+            } else {
+              state.expandedDrawers.add(w);
+            }
+            renderMainContent();
+            return;
+          }
+
+          const exFilterBtn = e.target.closest('[data-ex-filter]');
+          if (exFilterBtn) {
+            state.drawerSourceFilter.set(exFilterBtn.dataset.word, exFilterBtn.dataset.exFilter);
+            renderMainContent();
+            return;
+          }
+
+          const jumpBtn = e.target.closest('[data-jump-unit]');
+          if (jumpBtn) {
+            openUnit(jumpBtn.dataset.jumpUnit);
+            return;
+          }
+
+          const maskEl = e.target.closest('[data-mask-reveal].mask-active');
+          if (maskEl) {
+            maskEl.classList.toggle('revealed');
+          }
+        });
+
+        // Export Progress JSON
+        els.btnExportProgress.addEventListener('click', () => {
+          const payload = {
+            exportedAt: new Date().toISOString(),
+            mastered: Array.from(state.mastered),
+            notebook: Array.from(state.notebook),
+          };
+          const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `redbook-progress-${new Date().toISOString().slice(0, 10)}.json`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+          showToast('进度文件已导出', 'success');
+        });
+
+        // Import Progress JSON -> POST ./api/progress/batch (merge)
+        els.inputProgressUpload.addEventListener('change', async (e) => {
+          const file = e.target.files?.[0];
+          if (!file) return;
+          try {
+            const text = await file.text();
+            const parsed = JSON.parse(text);
+            const mastered = Array.isArray(parsed.mastered) ? parsed.mastered : [];
+            const notebook = Array.isArray(parsed.notebook) ? parsed.notebook : [];
+            if (!mastered.length && !notebook.length) {
+              showToast('文件中未找到可导入的进度记录', 'error');
+              return;
+            }
+            await apiBatchImport(mastered, notebook);
+            renderSidebarAndProgress();
+            renderMainContent();
+            showToast(`已合并导入 ${mastered.length} 个已掌握词、${notebook.length} 个生词`, 'success');
+          } catch (err) {
+            console.error('Import error:', err);
+            showToast('进度文件格式无效或同步失败', 'error');
+          } finally {
+            e.target.value = '';
+          }
+        });
+
+        // Flashcard Modal Events
+        els.fcClose.addEventListener('click', closeFlashcardModal);
+        els.fcStage.addEventListener('click', (e) => {
+          if (e.target.closest('button')) return;
+          state.fcFlipped = !state.fcFlipped;
+          els.fcInner.classList.toggle('is-flipped', state.fcFlipped);
+        });
+        els.fcSpeak.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const item = state.fcList[state.fcIndex];
+          if (item) speakText(item.word, els.fcSpeak);
+        });
+        els.fcBackSpeak.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const item = state.fcList[state.fcIndex];
+          if (item) speakText(item.word, els.fcBackSpeak);
+        });
+        els.fcPrev.addEventListener('click', () => fcStep(-1));
+        els.fcNext.addEventListener('click', () => fcStep(1));
+        els.fcToggleMastered.addEventListener('click', () => {
+          const item = state.fcList[state.fcIndex];
+          if (item) toggleMastered(item.word);
+        });
+        els.fcToggleNotebook.addEventListener('click', () => {
+          const item = state.fcList[state.fcIndex];
+          if (item) toggleNotebook(item.word);
+        });
+        els.fcShuffle.addEventListener('click', () => {
+          for (let i = state.fcList.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [state.fcList[i], state.fcList[j]] = [state.fcList[j], state.fcList[i]];
+          }
+          state.fcIndex = 0;
+          state.fcFlipped = false;
+          renderFlashcard();
+          showToast('已打乱当前闪卡顺序');
+        });
+
+        // Flashcard Touch Swipe Support
+        let touchStartX = 0;
+        let touchStartY = 0;
+        els.fcStage.addEventListener('touchstart', (e) => {
+          if (!e.touches.length) return;
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        els.fcStage.addEventListener('touchend', (e) => {
+          if (!e.changedTouches.length) return;
+          const dx = e.changedTouches[0].clientX - touchStartX;
+          const dy = e.changedTouches[0].clientY - touchStartY;
+          if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+            fcStep(dx < 0 ? 1 : -1);
+          }
+        }, { passive: true });
+
+        // Flashcard Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+          if (!state.fcOpen) return;
+          if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+          if (e.code === 'Space') {
+            e.preventDefault();
+            state.fcFlipped = !state.fcFlipped;
+            els.fcInner.classList.toggle('is-flipped', state.fcFlipped);
+          } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            fcStep(-1);
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            fcStep(1);
+          } else if (e.key === '1') {
+            e.preventDefault();
+            const item = state.fcList[state.fcIndex];
+            if (item) toggleMastered(item.word);
+          } else if (e.key === '2') {
+            e.preventDefault();
+            const item = state.fcList[state.fcIndex];
+            if (item) toggleNotebook(item.word);
+          } else if (e.key === 's' || e.key === 'S') {
+            e.preventDefault();
+            const item = state.fcList[state.fcIndex];
+            if (item) speakText(item.word);
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeFlashcardModal();
+          }
+        });
+      }
+
+      /* =====================================================================
+       * 16. BOOTSTRAP
+       * ===================================================================== */
+      async function init() {
+        bindEvents();
+        await apiLoadInitial();
+        applyTheme();
+        renderSidebarAndProgress();
+        updateToolbarControls();
+
+        // Open saved lastUnit if valid, otherwise the first unit
+        const initialUnit =
+          state.settings.lastUnit && state.unitOrder.includes(state.settings.lastUnit)
+            ? state.settings.lastUnit
+            : state.unitOrder[0];
+
+        if (initialUnit) {
+          await openUnit(initialUnit, false);
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', init);
+    })();
+  </script>
+</body>
+</html>
