@@ -22,7 +22,7 @@
 
 全屏沉浸式闪卡模式
 
-<img width="2549" height="1254" alt="image" src="https://github.com/user-attachments/assets/4444d1c8-f635-42da-97e7-a32018229325" />
+<img width="2549" height="1254" alt="image" src="https://github.com/user-attachments/assets/c79cb2d5-334e-4f03-a680-1aa1f8a5ae76" />
 
 
 ---
