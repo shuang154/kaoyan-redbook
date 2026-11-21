@@ -1,5 +1,3 @@
-<div align="center">
-
 # 📕 考研英语红宝书 · 网页版 (Web Red Book)
 
 **暖纸书排版 · 真题例句高亮 · 按单元异步加载 · SQLite 多端云同步**
@@ -17,17 +15,16 @@
 
 > 提示：推送到 GitHub 后，在网页端编辑本文件，将截图直接拖入下方替换占位链接即可自动生成图床。
 
-| 暖纸书主界面（卡片视图） | 深色模式 & 真题例句高亮 |
+| 暖纸书主界面 & 真题例句高亮） | 速刷模式  |
 | :---: | :---: |
-| ![主界面预览](在此处拖入浅色主界面截图) | ![深色模式预览](在此处拖入深色模式截图) |
+| <img width="2549" height="1254" alt="image" src="https://github.com/user-attachments/assets/ff630b18-29de-43b2-ae97-1d16ba4a037f" /> | <img width="2549" height="1254" alt="image" src="https://github.com/user-attachments/assets/fbae15cf-d4ff-4c66-8d34-39068fcd712b" />|
 
-<details>
-<summary>点击查看：全屏沉浸式闪卡模式</summary>
-<br>
 
-![闪卡模式](在此处拖入闪卡模式截图)
 
-</details>
+全屏沉浸式闪卡模式
+
+<img width="2549" height="1254" alt="image" src="https://github.com/user-attachments/assets/4444d1c8-f635-42da-97e7-a32018229325" />
+
 
 ---
 
